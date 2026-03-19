@@ -496,7 +496,7 @@ function loadFirebase(){
 // ══════════════════════════════════════════════
 
 // ── USERS en Firebase ──
-const USERS_DOC='__users__';
+const USERS_DOC='_usuarios_';
 let users={};
 
 async function loadUsersFromFirebase(){
@@ -512,9 +512,15 @@ async function saveUsers(u){
   users=u;
   await loadFirebase();
   try{
-    await setDoc(doc(fsdb,'calificaciones',USERS_DOC),{users:JSON.parse(JSON.stringify(u))});
-    console.log('✅ Usuarios guardados en Firebase');
-  }catch(e){console.error('saveUsers error',e);}
+    // Limpiar objeto para Firestore (sin undefined)
+    const clean=JSON.parse(JSON.stringify(u, (k,v)=>v===undefined?null:v));
+    console.log('💾 Guardando usuarios en Firebase:', Object.keys(clean));
+    await setDoc(doc(fsdb,'calificaciones',USERS_DOC),{users:clean});
+    console.log('✅ Usuarios guardados OK en Firebase');
+  }catch(e){
+    console.error('❌ saveUsers error:', e.code, e.message);
+    toast('⚠️ Error al guardar: '+e.message);
+  }
 }
 
 async function initUsers(){
@@ -1075,14 +1081,23 @@ function toast(m){const t=document.createElement('div');t.className='toast';t.te
 // Exponer funciones al window (necesario con type="module")
 function toggleFullscreen(){
   const btn=document.getElementById('btn-fs');
-  if(!document.fullscreenElement&&!document.webkitFullscreenElement){
+  const isFs=document.fullscreenElement||document.webkitFullscreenElement;
+  if(!isFs){
     const el=document.documentElement;
-    if(el.requestFullscreen) el.requestFullscreen();
-    else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-    if(btn) btn.textContent='✕⛶';
+    const req=el.requestFullscreen||el.webkitRequestFullscreen||el.mozRequestFullScreen||el.msRequestFullscreen;
+    if(req){
+      req.call(el).then(()=>{if(btn)btn.textContent='✕⛶';}).catch(()=>{
+        // Fallback para móvil: ocultar barra de dirección con scroll trick
+        window.scrollTo(0,1);
+        toast('💡 En móvil: usa el menú del navegador para pantalla completa');
+      });
+    } else {
+      window.scrollTo(0,1);
+      toast('💡 En este navegador: usa el menú → "Pantalla completa"');
+    }
   } else {
-    if(document.exitFullscreen) document.exitFullscreen();
-    else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
+    const ex=document.exitFullscreen||document.webkitExitFullscreen||document.mozCancelFullScreen||document.msExitFullscreen;
+    if(ex) ex.call(document);
     if(btn) btn.textContent='⛶';
   }
 }
