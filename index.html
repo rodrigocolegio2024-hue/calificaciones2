@@ -1061,11 +1061,7 @@ function XLS(){
   if(!cur)return;
   const sts=[...db.cursos[cur]].sort((a,b)=>a.nombre.localeCompare(b.nombre));
   const mx=maxP();const f=new Date().toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'numeric'});
-  let html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8">
-
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Calificaciones</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table border="1"><thead>';
+  let html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Calificaciones</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table border="1"><thead>';
   html+='<tr><th colspan="8" style="background:#1a1a2e;color:white;font-size:13pt">Reporte — '+cur+'</th></tr>';
   html+='<tr><th colspan="8">'+getTitulo()+' · 1er Trimestre · '+f+'</th></tr>';
   html+='<tr style="background:#f0f0f0"><th>#</th><th>Nombre</th><th>P. Teóricas (/10)</th><th>P. Prácticas (/'+mx+')</th><th>Nota Teórica</th><th>Nota Práctica</th><th>Total /100</th><th>Estado</th></tr></thead><tbody>';
@@ -1084,11 +1080,7 @@ function XLS(){
 
 function XLS_PEND(){
   const f=new Date().toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'numeric'});
-  let html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8">
-
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Pendientes</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body>';
+  let html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Pendientes</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body>';
   const cursosConPend=CURSOS.filter(c=>pendientes(c).length>0);
   if(!cursosConPend.length){toast('✅ ¡No hay pendientes!');return;}
   cursosConPend.forEach(c=>{
@@ -1223,7 +1215,10 @@ applyTitulo();
 <!-- Service Worker for PWA offline support -->
 <script>
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  // Desregistrar Service Workers viejos que pueden cachear versiones rotas
+  navigator.serviceWorker.getRegistrations().then(regs=>{
+    regs.forEach(r=>r.unregister());
+  });
 }
 </script>
 </body>
