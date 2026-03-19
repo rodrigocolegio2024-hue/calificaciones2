@@ -431,7 +431,7 @@ textarea.it:focus{border-color:var(--teal)}
   <div style="margin-top:1.8rem;font-size:8.5pt;color:#888;border-top:1px solid #ccc;padding-top:.5rem">Informática 1er Trimestre — <span id="pdate-pend"></span></div>
 </div>
 
-<script type="module">
+<script>
 // ══════════════════════════════════════════════
 // DATOS BASE (lista de estudiantes por curso)
 // ══════════════════════════════════════════════
@@ -455,8 +455,8 @@ const PRIM=['1ro Primaria','2do Primaria','3ro Primaria','4to Primaria','5to Pri
 // ══════════════════════════════════════════════
 // FIREBASE CONFIG & INIT
 // ══════════════════════════════════════════════
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+// Firebase se carga dinámicamente
+let initializeApp, getFirestore, doc, getDoc, setDoc;
 
 const firebaseConfig = {
   apiKey: "AIzaSyDW2WILttuLKqSQ9hrXNb-v8uDOdUThl_I",
@@ -468,8 +468,27 @@ const firebaseConfig = {
   measurementId: "G-DQWM7J61FD"
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
-const fsdb = getFirestore(firebaseApp);
+let firebaseApp, fsdb;
+let _fbReady = false;
+let _fbPromise = null;
+
+function loadFirebase(){
+  if(_fbReady) return Promise.resolve();
+  if(_fbPromise) return _fbPromise;
+  _fbPromise = (async()=>{
+    const appMod = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js");
+    const fsMod  = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js");
+    initializeApp = appMod.initializeApp;
+    getFirestore  = fsMod.getFirestore;
+    doc    = fsMod.doc;
+    getDoc = fsMod.getDoc;
+    setDoc = fsMod.setDoc;
+    firebaseApp = initializeApp(firebaseConfig);
+    fsdb = getFirestore(firebaseApp);
+    _fbReady = true;
+  })();
+  return _fbPromise;
+}
 
 // ══════════════════════════════════════════════
 // AUTH & STORAGE
@@ -495,6 +514,7 @@ async function saveUsers(u){
 }
 
 async function initUsers(){
+  await loadFirebase();
   const loaded=await loadUsersFromFirebase();
   if(loaded){users=loaded;}
   else{users={rodrigo:{pass:'123456',created:Date.now()}};await saveUsers(users);}
@@ -527,6 +547,7 @@ function sdb(){
 }
 
 async function initDb(){
+  await loadFirebase();
   showLoading(true);
   db=await loadDb();
   if(!db){
@@ -1032,8 +1053,15 @@ function toast(m){const t=document.createElement('div');t.className='toast';t.te
 // Exponer funciones al window (necesario con type="module")
 Object.assign(window,{doLogin,doLogout,ST,SC,RG,RC,RE,RI,RR,RP,RQ,GN,QS,AE,DE,IMP,CN,clamp,updatePLabel,PRT,PRT_PEND,XLS,createUser,deleteUser,renderUsers,exportData,importData,limpiarCalificaciones,limpiarTodo,guardarTitulo,applyTitulo,openEditModal,closeEditModal,verifyEditPass,saveEditUser});
 
-// Apply title on page load
+// Arranque: cargar Firebase → usuarios → título
 applyTitulo();
+(async()=>{
+  const btn=document.querySelector('.login-btn');
+  if(btn){btn.disabled=true;btn.textContent='Cargando...';}
+  await loadFirebase();
+  await initUsers();
+  if(btn){btn.disabled=false;btn.textContent='Ingresar →';}
+})();
 
 // ── CROSSFADE BACKGROUND ──
 (function(){
