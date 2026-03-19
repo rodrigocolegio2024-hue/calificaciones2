@@ -7,7 +7,7 @@
 
 <!-- PWA Meta Tags -->
 <meta name="application-name" content="Calificaciones">
-<meta name="description" content="Sistema de calificaciones para InformÃ¡tica â€” DiseÃ±ado por Rodrigo Obando">
+<meta name="description" content="Sistema de calificaciones para Informática — Diseñado por Rodrigo Obando">
 <meta name="theme-color" content="#1a1a2e">
 <meta name="background-color" content="#1a1a2e">
 <meta name="mobile-web-app-capable" content="yes">
@@ -21,8 +21,8 @@
 <link rel="manifest" href="manifest.json">
 
 <!-- Apple Touch Icon (inline SVG as data URI) -->
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%231a1a2e'/><text x='256' y='340' font-size='300' text-anchor='middle' fill='%23e8a838'>ðŸ“š</text></svg>">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%231a1a2e'/><text x='256' y='340' font-size='300' text-anchor='middle' fill='%23e8a838'>ðŸ“š</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%231a1a2e'/><text x='256' y='340' font-size='300' text-anchor='middle' fill='%23e8a838'>📚</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%231a1a2e'/><text x='256' y='340' font-size='300' text-anchor='middle' fill='%23e8a838'>📚</text></svg>">
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -30,7 +30,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;background-image:radial-gradient(ellipse at 20% 20%,rgba(200,75,49,.06) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(45,125,111,.06) 0%,transparent 60%)}
 
-/* â”€â”€ LOGIN â”€â”€ */
+/* ── LOGIN ── */
 #login-screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:9999;padding:1.5rem;overflow:hidden;background:var(--ink)}
 #login-bg{position:absolute;inset:0;z-index:0}
 .login-box{position:relative;z-index:1}
@@ -77,7 +77,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .login-credit{text-align:center;font-size:.72rem;color:var(--muted);margin-top:1.2rem;opacity:.7;font-style:italic;animation:fadeUp .5s .55s both ease-out}
 .login-credit strong{font-style:normal;font-weight:600;color:var(--teal)}
 
-/* â”€â”€ HEADER â”€â”€ */
+/* ── HEADER ── */
 #app-screen{display:none}
 header{background:var(--ink);color:var(--paper);padding:.9rem 1.2rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 20px var(--shadow);position:sticky;top:0;z-index:100;gap:.5rem}
 .header-left{display:flex;align-items:center;gap:.6rem;min-width:0}
@@ -88,18 +88,18 @@ header h1{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-
 .btn-logout:hover{background:rgba(255,255,255,.22)}
 .user-chip{font-size:.72rem;background:var(--teal);padding:.2rem .55rem;border-radius:20px;font-weight:600;white-space:nowrap}
 
-/* â”€â”€ TABS â”€â”€ */
+/* ── TABS ── */
 .tabs{display:flex;gap:0;border-bottom:2px solid var(--border);overflow-x:auto;background:var(--paper);-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{padding:.55rem .8rem;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;flex-shrink:0}
 .tab:hover{color:var(--ink)}.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 
-/* â”€â”€ LAYOUT â”€â”€ */
+/* ── LAYOUT ── */
 .main{max-width:1100px;margin:0 auto;padding:1.2rem}
 .panel{display:none}.panel.active{display:block;animation:fi .25s ease}
 @keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-/* â”€â”€ COURSES â”€â”€ */
+/* ── COURSES ── */
 .course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.65rem;margin-bottom:1.5rem}
 .course-btn{padding:.7rem .4rem;background:var(--card);border:2px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;cursor:pointer;transition:all .22s;text-align:center;color:var(--ink);position:relative}
 .course-btn:hover{border-color:var(--teal);background:#edf7f5;transform:translateY(-2px)}
@@ -115,7 +115,7 @@ header h1{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-
 .course-btn.sel .done-badge{color:rgba(255,255,255,.85)}
 .course-btn.sel strong{color:white}
 
-/* â”€â”€ COMPONENTS â”€â”€ */
+/* ── COMPONENTS ── */
 .stitle{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;margin-bottom:.9rem;color:var(--ink);display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
 .badge{background:var(--accent);color:white;font-family:'DM Sans',sans-serif;font-size:.66rem;font-weight:600;padding:.16rem .48rem;border-radius:20px;letter-spacing:.05em}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem;margin-bottom:1rem;box-shadow:0 2px 8px var(--shadow)}
@@ -165,7 +165,7 @@ textarea.it:focus{border-color:var(--teal)}
 .pend-name{background:#fff;border:1px solid var(--border);border-radius:6px;padding:.22rem .6rem;font-size:.8rem;color:var(--ink)}
 .btn-group{display:flex;gap:.5rem;flex-wrap:wrap}
 
-/* â”€â”€ USERS PANEL â”€â”€ */
+/* ── USERS PANEL ── */
 .user-row{display:flex;align-items:center;gap:.7rem;padding:.6rem .8rem;border-bottom:1px solid var(--border)}
 .user-row:last-child{border-bottom:none}
 .user-avatar{width:34px;height:34px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.88rem;flex-shrink:0}
@@ -173,7 +173,7 @@ textarea.it:focus{border-color:var(--teal)}
 .user-role{font-size:.72rem;color:var(--muted)}
 .user-actions{margin-left:auto;display:flex;gap:.4rem}
 
-/* â”€â”€ MOBILE â”€â”€ */
+/* ── MOBILE ── */
 @media(max-width:600px){
   .gform{grid-template-columns:1fr}
   .course-grid{grid-template-columns:repeat(3,1fr)}
@@ -187,7 +187,7 @@ textarea.it:focus{border-color:var(--teal)}
   .af{flex-direction:column}.af .ig{width:100%;min-width:unset}
 }
 
-/* â”€â”€ PRINT â”€â”€ */
+/* ── PRINT ── */
 @media print{
   body>*{display:none!important}
   body{background:white!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -200,183 +200,183 @@ textarea.it:focus{border-color:var(--teal)}
 </head>
 <body>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• LOGIN â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ══════════════ LOGIN ══════════════ -->
 <div id="login-screen">
   <div id="login-bg"></div>
   <div class="login-box">
     <div class="login-logo" id="login-title-text">Calificaciones</div>
-    <div class="login-sub" id="login-sub-text">Calificaciones â€” Inicia sesiÃ³n para continuar</div>
+    <div class="login-sub" id="login-sub-text">Calificaciones — Inicia sesión para continuar</div>
     <div class="login-field">
       <label>Usuario</label>
       <input type="text" id="l-user" placeholder="Tu nombre de usuario" autocomplete="username" onkeydown="if(event.key==='Enter')document.getElementById('l-pass').focus()">
     </div>
     <div class="login-field">
-      <label>ContraseÃ±a</label>
-      <input type="password" id="l-pass" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+      <label>Contraseña</label>
+      <input type="password" id="l-pass" placeholder="••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
     </div>
-    <button class="login-btn" onclick="doLogin()">Ingresar â†’</button>
-    <div class="login-err" id="l-err">Usuario o contraseÃ±a incorrectos</div>
+    <button class="login-btn" onclick="doLogin()">Ingresar →</button>
+    <div class="login-err" id="l-err">Usuario o contraseña incorrectos</div>
     <div class="login-credit">Designed by <strong>Rodrigo Obando</strong></div>
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• APP â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ══════════════ APP ══════════════ -->
 <div id="app-screen">
 <header>
   <div class="header-left">
     <h1 id="app-title">Calificaciones</h1>
-    <span id="hc">â€”</span>
+    <span id="hc">—</span>
   </div>
   <div class="header-right">
-    <span class="user-chip" id="user-chip">â€”</span>
+    <span class="user-chip" id="user-chip">—</span>
     <button class="btn-logout" onclick="doLogout()">Salir</button>
   </div>
 </header>
 <div class="tabs">
-  <button class="tab active" onclick="ST('tc')">ðŸ« Cursos</button>
-  <button class="tab" onclick="ST('tq')">âœï¸ Calificar</button>
-  <button class="tab" onclick="ST('te')">ðŸ‘©â€ðŸŽ“ Estudiantes</button>
-  <button class="tab" onclick="ST('ti')">ðŸ“‹ Importar</button>
-  <button class="tab" onclick="ST('tr')">ðŸ“Š Reporte</button>
-  <button class="tab" onclick="ST('tp')">â³ Pendientes</button>
-  <button class="tab" onclick="ST('tu')">âš™ï¸ Usuarios</button>
+  <button class="tab active" onclick="ST('tc')">🏫 Cursos</button>
+  <button class="tab" onclick="ST('tq')">✏️ Calificar</button>
+  <button class="tab" onclick="ST('te')">👩‍🎓 Estudiantes</button>
+  <button class="tab" onclick="ST('ti')">📋 Importar</button>
+  <button class="tab" onclick="ST('tr')">📊 Reporte</button>
+  <button class="tab" onclick="ST('tp')">⏳ Pendientes</button>
+  <button class="tab" onclick="ST('tu')">⚙️ Usuarios</button>
 </div>
 <div class="main">
 
   <!-- CURSOS -->
   <div id="tc" class="panel active">
     <div class="stitle">Seleccionar Curso</div>
-    <div class="inote">El curso se pone <strong style="color:var(--green)">verde</strong> cuando todos estÃ¡n calificados.</div>
+    <div class="inote">El curso se pone <strong style="color:var(--green)">verde</strong> cuando todos están calificados.</div>
     <div class="course-grid" id="cg"></div>
   </div>
 
   <!-- CALIFICAR -->
   <div id="tq" class="panel">
-    <div id="nq" class="scm"><div class="big">âœï¸</div><p>Selecciona un curso primero</p></div>
+    <div id="nq" class="scm"><div class="big">✏️</div><p>Selecciona un curso primero</p></div>
     <div id="qc" style="display:none">
-      <div class="stitle">Calificar <span class="badge" id="qb">â€”</span></div>
+      <div class="stitle">Calificar <span class="badge" id="qb">—</span></div>
       <div class="card">
         <div class="gform">
-          <div class="ig"><label>Estudiante <small style="font-weight:400;text-transform:none;color:var(--accent)" id="pending-count-lbl"></small></label><select id="se"><option value="">â€” Seleccionar â€”</option></select></div>
+          <div class="ig"><label>Estudiante <small style="font-weight:400;text-transform:none;color:var(--accent)" id="pending-count-lbl"></small></label><select id="se"><option value="">— Seleccionar —</option></select></div>
           <div></div>
-          <div class="ig"><label>âœ… TeÃ³ricas correctas <small style="font-weight:400;text-transform:none">(de 10 â€” 40 pts)</small></label><input type="number" id="it" min="0" max="10" placeholder="0â€“10" inputmode="numeric" oninput="clamp(this,10);CN()"><div class="errmsg" id="it-err">âš  MÃ¡ximo 10</div></div>
-          <div class="ig"><label>âœ… PrÃ¡cticas correctas <small style="font-weight:400;text-transform:none" id="ip-lbl">(de 15 â€” 60 pts)</small></label><input type="number" id="ip" min="0" max="15" placeholder="0â€“15" inputmode="numeric" oninput="clamp(this,maxP());CN()"><div class="errmsg" id="ip-err">âš  MÃ¡ximo <span id="ip-err-max">15</span></div></div>
+          <div class="ig"><label>✅ Teóricas correctas <small style="font-weight:400;text-transform:none">(de 10 — 40 pts)</small></label><input type="number" id="it" min="0" max="10" placeholder="0–10" inputmode="numeric" oninput="clamp(this,10);CN()"><div class="errmsg" id="it-err">⚠ Máximo 10</div></div>
+          <div class="ig"><label>✅ Prácticas correctas <small style="font-weight:400;text-transform:none" id="ip-lbl">(de 15 — 60 pts)</small></label><input type="number" id="ip" min="0" max="15" placeholder="0–15" inputmode="numeric" oninput="clamp(this,maxP());CN()"><div class="errmsg" id="ip-err">⚠ Máximo <span id="ip-err-max">15</span></div></div>
         </div>
         <div class="rbox" id="rb" style="display:none">
-          <div><div class="rscore" id="rs">â€”</div><div class="rlabel">PuntuaciÃ³n /100</div></div>
-          <div class="rbk"><span id="rt">TeÃ³rica: â€”</span><span id="rp">PrÃ¡ctica: â€”</span><span id="rto" style="font-weight:600;margin-top:.2rem">Total: â€”</span></div>
-          <button class="btn bp" onclick="GN()">ðŸ’¾ Guardar</button>
+          <div><div class="rscore" id="rs">—</div><div class="rlabel">Puntuación /100</div></div>
+          <div class="rbk"><span id="rt">Teórica: —</span><span id="rp">Práctica: —</span><span id="rto" style="font-weight:600;margin-top:.2rem">Total: —</span></div>
+          <button class="btn bp" onclick="GN()">💾 Guardar</button>
         </div>
       </div>
       <div class="div"></div>
-      <div class="stitle" style="font-size:1rem">Lista â€” <span id="ungraded-count" style="color:var(--accent)">0</span> sin calificar</div>
-      <div class="card" style="overflow-x:auto"><table class="tbl" style="table-layout:fixed;width:100%;min-width:420px"><thead><tr><th style="width:2rem">#</th><th>Nombre</th><th style="width:95px">TeÃ³ricas</th><th style="width:95px">PrÃ¡cticas (0â€“<span id="qtb-max-p">15</span>)</th><th style="width:80px">Nota</th><th style="width:36px"></th></tr></thead><tbody id="qtb"></tbody></table></div>
+      <div class="stitle" style="font-size:1rem">Lista — <span id="ungraded-count" style="color:var(--accent)">0</span> sin calificar</div>
+      <div class="card" style="overflow-x:auto"><table class="tbl" style="table-layout:fixed;width:100%;min-width:420px"><thead><tr><th style="width:2rem">#</th><th>Nombre</th><th style="width:95px">Teóricas</th><th style="width:95px">Prácticas (0–<span id="qtb-max-p">15</span>)</th><th style="width:80px">Nota</th><th style="width:36px"></th></tr></thead><tbody id="qtb"></tbody></table></div>
     </div>
   </div>
 
   <!-- ESTUDIANTES -->
   <div id="te" class="panel">
-    <div id="ne" class="scm"><div class="big">ðŸ‘©â€ðŸŽ“</div><p>Selecciona un curso primero</p></div>
+    <div id="ne" class="scm"><div class="big">👩‍🎓</div><p>Selecciona un curso primero</p></div>
     <div id="ec" style="display:none">
-      <div class="toolbar"><div class="stitle" style="margin:0">Estudiantes <span class="badge" id="eb">â€”</span></div><input type="text" class="sb" placeholder="ðŸ” Buscarâ€¦" oninput="RE()" id="qs"></div>
+      <div class="toolbar"><div class="stitle" style="margin:0">Estudiantes <span class="badge" id="eb">—</span></div><input type="text" class="sb" placeholder="🔍 Buscar…" oninput="RE()" id="qs"></div>
       <div class="card">
-        <div class="af"><div class="ig"><label>Nombre completo</label><input type="text" id="nn" placeholder="Ej: Juan PÃ©rez" onkeydown="if(event.key==='Enter')AE()"></div><button class="btn bp" onclick="AE()">+ Agregar</button></div>
+        <div class="af"><div class="ig"><label>Nombre completo</label><input type="text" id="nn" placeholder="Ej: Juan Pérez" onkeydown="if(event.key==='Enter')AE()"></div><button class="btn bp" onclick="AE()">+ Agregar</button></div>
         <div class="sr" id="str"></div>
-        <div style="overflow-x:auto"><table class="tbl"><thead><tr><th>#</th><th>Nombre</th><th>TeÃ³ricas</th><th>PrÃ¡cticas</th><th>Nota</th><th></th></tr></thead><tbody id="etb"></tbody></table></div>
+        <div style="overflow-x:auto"><table class="tbl"><thead><tr><th>#</th><th>Nombre</th><th>Teóricas</th><th>Prácticas</th><th>Nota</th><th></th></tr></thead><tbody id="etb"></tbody></table></div>
       </div>
     </div>
   </div>
 
   <!-- IMPORTAR -->
   <div id="ti" class="panel">
-    <div id="ni" class="scm"><div class="big">ðŸ“‹</div><p>Selecciona un curso primero</p></div>
+    <div id="ni" class="scm"><div class="big">📋</div><p>Selecciona un curso primero</p></div>
     <div id="ic" style="display:none">
-      <div class="stitle">Importar <span class="badge" id="ib">â€”</span></div>
-      <div class="inote">Pega nombres, uno por lÃ­nea.</div>
+      <div class="stitle">Importar <span class="badge" id="ib">—</span></div>
+      <div class="inote">Pega nombres, uno por línea.</div>
       <div class="card">
-        <textarea class="it" id="ita" placeholder="Juan PÃ©rez&#10;MarÃ­a GarcÃ­a&#10;â€¦"></textarea>
-        <div style="display:flex;gap:.65rem;align-items:center;flex-wrap:wrap"><button class="btn bp" onclick="IMP()">ðŸ“¥ Importar</button><span id="ir" style="font-size:.8rem;color:var(--teal);font-weight:600"></span></div>
+        <textarea class="it" id="ita" placeholder="Juan Pérez&#10;María García&#10;…"></textarea>
+        <div style="display:flex;gap:.65rem;align-items:center;flex-wrap:wrap"><button class="btn bp" onclick="IMP()">📥 Importar</button><span id="ir" style="font-size:.8rem;color:var(--teal);font-weight:600"></span></div>
       </div>
     </div>
   </div>
 
   <!-- REPORTE -->
   <div id="tr" class="panel">
-    <div id="nr" class="scm"><div class="big">ðŸ“Š</div><p>Selecciona un curso primero</p></div>
+    <div id="nr" class="scm"><div class="big">📊</div><p>Selecciona un curso primero</p></div>
     <div id="rc" style="display:none">
       <div class="toolbar">
-        <div class="stitle" style="margin:0">Reporte <span class="badge" id="rb2">â€”</span></div>
+        <div class="stitle" style="margin:0">Reporte <span class="badge" id="rb2">—</span></div>
         <div class="btn-group">
-          <button class="btn bxl" onclick="XLS()">ðŸ“¥ Excel</button>
-          <button class="btn bg" onclick="PRT()">ðŸ–¨ï¸ PDF</button>
+          <button class="btn bxl" onclick="XLS()">📥 Excel</button>
+          <button class="btn bg" onclick="PRT()">🖨️ PDF</button>
         </div>
       </div>
       <div class="sr" id="rsr"></div>
-      <div class="card" style="overflow-x:auto"><table class="tbl"><thead><tr><th>#</th><th>Nombre</th><th>TeÃ³r.</th><th>PrÃ¡ct.</th><th>N.TeÃ³r.</th><th>N.PrÃ¡ct.</th><th>Total</th></tr></thead><tbody id="rtb"></tbody></table></div>
+      <div class="card" style="overflow-x:auto"><table class="tbl"><thead><tr><th>#</th><th>Nombre</th><th>Teór.</th><th>Práct.</th><th>N.Teór.</th><th>N.Práct.</th><th>Total</th></tr></thead><tbody id="rtb"></tbody></table></div>
     </div>
   </div>
 
   <!-- PENDIENTES -->
   <div id="tp" class="panel">
     <div class="toolbar">
-      <div class="stitle" style="margin:0">â³ Pendientes</div>
-      <button class="btn bg" onclick="PRT_PEND()">ðŸ–¨ï¸ PDF</button>
+      <div class="stitle" style="margin:0">⏳ Pendientes</div>
+      <button class="btn bg" onclick="PRT_PEND()">🖨️ PDF</button>
     </div>
     <div id="pend-stats" class="sr"></div>
-    <div id="no-pending-msg" class="card" style="display:none"><div class="empty"><div class="ei">ðŸŽ‰</div><strong>Â¡Todo calificado!</strong></div></div>
+    <div id="no-pending-msg" class="card" style="display:none"><div class="empty"><div class="ei">🎉</div><strong>¡Todo calificado!</strong></div></div>
     <div id="pend-list"></div>
   </div>
 
   <!-- USUARIOS -->
   <div id="tu" class="panel">
-    <div class="stitle">âš™ï¸ GestiÃ³n de Usuarios</div>
+    <div class="stitle">⚙️ Gestión de Usuarios</div>
     <div class="inote">Cada usuario tiene su propio registro independiente de calificaciones.</div>
     <!-- Crear usuario -->
     <div class="card">
-      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">âž• Crear nuevo usuario</div>
+      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">➕ Crear nuevo usuario</div>
       <div class="gform">
         <div class="ig"><label>Nombre de usuario</label><input type="text" id="nu-user" placeholder="ej: maria123"></div>
-        <div class="ig"><label>ContraseÃ±a</label><input type="password" id="nu-pass" placeholder="mÃ­nimo 4 caracteres"></div>
+        <div class="ig"><label>Contraseña</label><input type="password" id="nu-pass" placeholder="mínimo 4 caracteres"></div>
       </div>
       <button class="btn bp" onclick="createUser()">Crear Usuario</button>
       <span id="nu-msg" style="font-size:.8rem;margin-left:.7rem;font-weight:600"></span>
     </div>
     <!-- Lista usuarios -->
     <div class="card">
-      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">ðŸ‘¥ Usuarios registrados</div>
+      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">👥 Usuarios registrados</div>
       <div id="users-list"></div>
     </div>
     <!-- Exportar / Importar datos -->
     <div class="card">
-      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">ðŸ”„ Exportar / Importar mis datos</div>
-      <div class="inote" style="margin-bottom:.9rem">Exporta tus calificaciones como archivo JSON y luego impÃ³rtalo en otro dispositivo o navegador.</div>
+      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">🔄 Exportar / Importar mis datos</div>
+      <div class="inote" style="margin-bottom:.9rem">Exporta tus calificaciones como archivo JSON y luego impórtalo en otro dispositivo o navegador.</div>
       <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-        <button class="btn bp" onclick="exportData()">â¬‡ï¸ Exportar mis datos</button>
-        <label class="btn" style="background:var(--gold);color:var(--ink);cursor:pointer">â¬†ï¸ Importar datos <input type="file" accept=".json" style="display:none" onchange="importData(this)"></label>
+        <button class="btn bp" onclick="exportData()">⬇️ Exportar mis datos</button>
+        <label class="btn" style="background:var(--gold);color:var(--ink);cursor:pointer">⬆️ Importar datos <input type="file" accept=".json" style="display:none" onchange="importData(this)"></label>
       </div>
     </div>
-    <!-- Cambiar tÃ­tulo -->
+    <!-- Cambiar título -->
     <div class="card">
-      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">âœï¸ Nombre de la materia</div>
-      <div class="inote" style="margin-bottom:.9rem">Cambia el tÃ­tulo que aparece en el encabezado y en los reportes impresos.</div>
+      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">✏️ Nombre de la materia</div>
+      <div class="inote" style="margin-bottom:.9rem">Cambia el título que aparece en el encabezado y en los reportes impresos.</div>
       <div style="display:flex;gap:.6rem;align-items:flex-end;flex-wrap:wrap">
         <div class="ig" style="flex:1;min-width:180px">
-          <label>TÃ­tulo</label>
-          <input type="text" id="inp-titulo" placeholder="Ej: InformÃ¡tica" style="font-size:.95rem">
+          <label>Título</label>
+          <input type="text" id="inp-titulo" placeholder="Ej: Informática" style="font-size:.95rem">
         </div>
-        <button class="btn bp" onclick="guardarTitulo()">ðŸ’¾ Guardar</button>
+        <button class="btn bp" onclick="guardarTitulo()">💾 Guardar</button>
       </div>
       <div id="titulo-msg" style="font-size:.8rem;margin-top:.5rem;font-weight:600"></div>
     </div>
     <!-- Limpiar estudiantes -->
     <div class="card" style="border-color:#f5c6cb">
-      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem;color:#721c24">ðŸ—‘ï¸ Limpiar datos de estudiantes</div>
+      <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem;color:#721c24">🗑️ Limpiar datos de estudiantes</div>
       <div style="background:#fff0ee;border-left:4px solid var(--accent);padding:.65rem .9rem;border-radius:0 8px 8px 0;font-size:.8rem;color:var(--accent);margin-bottom:.9rem">
-        âš ï¸ <strong>Zona de peligro.</strong> Esta acciÃ³n elimina todas las calificaciones registradas. Los nombres de los estudiantes se mantienen pero sus notas se borran permanentemente.
+        ⚠️ <strong>Zona de peligro.</strong> Esta acción elimina todas las calificaciones registradas. Los nombres de los estudiantes se mantienen pero sus notas se borran permanentemente.
       </div>
       <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-        <button class="btn" style="background:transparent;color:#721c24;border:1.5px solid #f5c6cb" onclick="limpiarCalificaciones()">ðŸ—‘ï¸ Borrar solo notas</button>
-        <button class="btn" style="background:transparent;color:#721c24;border:1.5px solid #f5c6cb" onclick="limpiarTodo()">ðŸ’£ Borrar todo (notas + estudiantes extra)</button>
+        <button class="btn" style="background:transparent;color:#721c24;border:1.5px solid #f5c6cb" onclick="limpiarCalificaciones()">🗑️ Borrar solo notas</button>
+        <button class="btn" style="background:transparent;color:#721c24;border:1.5px solid #f5c6cb" onclick="limpiarTodo()">💣 Borrar todo (notas + estudiantes extra)</button>
       </div>
     </div>
   </div>
@@ -391,46 +391,46 @@ textarea.it:focus{border-color:var(--teal)}
   <table style="width:100%;border-collapse:collapse;font-size:9.5pt">
     <thead><tr style="background:#1a1a2e;color:white">
       <th style="padding:6px 9px;text-align:left">#</th><th style="padding:6px 9px;text-align:left">Nombre</th>
-      <th style="padding:6px 9px;text-align:center">TeÃ³ricas</th><th style="padding:6px 9px;text-align:center">PrÃ¡cticas</th>
-      <th style="padding:6px 9px;text-align:center">Nota TeÃ³rica</th><th style="padding:6px 9px;text-align:center">Nota PrÃ¡ctica</th>
+      <th style="padding:6px 9px;text-align:center">Teóricas</th><th style="padding:6px 9px;text-align:center">Prácticas</th>
+      <th style="padding:6px 9px;text-align:center">Nota Teórica</th><th style="padding:6px 9px;text-align:center">Nota Práctica</th>
       <th style="padding:6px 9px;text-align:center">Total /100</th>
     </tr></thead>
     <tbody id="ptb"></tbody>
   </table>
-  <div style="margin-top:1.8rem;font-size:8.5pt;color:#888;border-top:1px solid #ccc;padding-top:.5rem">InformÃ¡tica 1er Trimestre â€” <span id="pdate"></span></div>
+  <div style="margin-top:1.8rem;font-size:8.5pt;color:#888;border-top:1px solid #ccc;padding-top:.5rem">Informática 1er Trimestre — <span id="pdate"></span></div>
 </div>
 <!-- PRINT: Pendientes -->
 <div id="pc-pending">
   <div class="pt">Estudiantes Pendientes</div>
   <p style="text-align:center;color:#777;margin-bottom:1.4rem;font-size:10pt" id="pfec-pend"></p>
   <div id="ptb-pend"></div>
-  <div style="margin-top:1.8rem;font-size:8.5pt;color:#888;border-top:1px solid #ccc;padding-top:.5rem">InformÃ¡tica 1er Trimestre â€” <span id="pdate-pend"></span></div>
+  <div style="margin-top:1.8rem;font-size:8.5pt;color:#888;border-top:1px solid #ccc;padding-top:.5rem">Informática 1er Trimestre — <span id="pdate-pend"></span></div>
 </div>
 
 <script type="module">
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 // DATOS BASE (lista de estudiantes por curso)
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 const ID={
   "1ro Primaria":["BAUTISTA BENANCIO EMMA VICTORIA","COCA RODRIGUEZ DAFNE MICAELA","COCA RODRIGUEZ EITHAN ALEXANDER","CONDORI CORIA NICOL CELESTE","COSTAS TORREZ SAMANTHA EMILIA","GUZMAN PAZ NEYTAN","LOPEZ TAPIA RICARDO NICOLAS","QUISPE LAZO YESENIA","SOLIZ ARANDIA ABISH DANTZEL"],
   "2do Primaria":["ALDUNATE MANCILLA LEO RAFAEL","AQUINO ESCALERA MAXIMILIANO MATEO","BAPTISTA SOLANO ISAAC WALLACE","CHOQUE LUPE MILLET KATHERINE","COTRINO CACHI JHESABEL JHOMARA","JIMENEZ AMOZABEL BELEN JASMIN","LLANQUE HEVIA LEONARDO ALEXANDRO","MAIRE PEREZ CATTLEY VALENTINA","OROZCO ADRIAZOLA ADELAIDA CORAL","QUINTEROS QUISPE THIAGO FACUNDO","ROMERO QUISPE MERY CAROLAY","ROSSEL JOAN MARTIN","TRUTA SOLORZANO JOSE LUIS MILAN"],
   "3ro Primaria":["BALDERRAMA MEDRANO SAUL","CAMPOS ANCIETA CARLOS SIMON","CARACILA RAMOS RAIZEL ILEIN","GUILLEN ARCE MARGARETH ALINA","LOPEZ BLANCUD APRIL JENNIFER","MENECES TERAN LIAN DAVID","MERIDA SEVERICH PRISCILA ALIZ","MINA VELA FATIMA","MONTECINOS TERRAZAS SIMONE EDITH","PORTUGAL PEREZ KILLIAM SEBASTIAN","QUISPE QUISBERT ANGEL SANTIAGO","RIVERA MONTERO MATIAS URIEL PABLO","SOLIZ ARANDIA MARIA ESTHER","TORREZ MORALES DIANA SOFIA","VARGAS ARRAYA FACUNDO LAUTARO","ZEBALLOS PADILLA ANTONELLA"],
   "4to Primaria":["APAZA TORRICO SEBASTIAN","ARANIBAR MENDOZA SEBASTIAN THIAGO","FERNANDEZ MALLEA SELIM RAHUL","GANDARILLAS BARAHONA AINHOA SARAI","GUZMAN PAZ DOMINIC","MIRANDA BARAHONA LUCIANA VALENTINA","ORIHUELA URIBE THIAGO JHILMAR","PINTO SILES ISAC FABRICIO","RAMALLO ZELAYA KEISY CAMILA","SOLIZ ARANDIA YOLANDA CAMILA"],
   "5to Primaria":["BALDERRAMA MEDRANO JOAQUIN","BAUTISTA BENANCIO SANTIAGO ANDRES","CARACILA RAMOS NAZLI LUZIANE","CASTILLO MARCA AARON ALCIDEZ","CRISTALDO MARTINEZ VALENTINA GABRIELA","FELIPES RIOS MAYTE YADITH","MENDIETA GARCIA GENESIS ARIANA","MENECES TERAN ASHLY THAIZ","MERCADO GARCIA ANNIE VALENTINA","VARGAS CESPEDES EYVI VALENTINA"],
-  "6to Primaria":["ANDRADE RIVA DIEGO ARTURO","BAPTISTA SOLANO GIOVANA LUVIA","CASTELLON FLORES MATIAS ALBERTH","CONDORI APAZA BEYMAR FERNANDO","CONDORI HUARACHI ARIANA ONIEL","CONDORI HUARACHI NAHOMI FERNANDA","CORTEZ GARCIA ALINE","ENRRIQUEZ FLORES LEONEL SANTIAGO","ESCARAY FERNANDEZ JERARD THIAGO","FRANCO BUEZO VICTOR GABRIEL","GUTIERREZ PINTO JHEIDAN MATIAS","LIMA VELEZ SAMANTHA","LUNA BUSTILLOS KAELD FABIAN","MALDONADO MENDOZA ANDERS","MERIDA SEVERICH LUIS GERALD","ORDOÃ‘EZ CASSANDRA","PINTO SILES VALENTINA SARA","SAAVEDRA SERRANO ITAN SEBASTIAN","SANJINEZ QUISPE LUIS DANIEL","SOLIZ ARANDIA EMMA ASUNCION","SOLIZ ARANDIA JAY","TAPIA MENDOZA CAMILA ANTONELLA"],
+  "6to Primaria":["ANDRADE RIVA DIEGO ARTURO","BAPTISTA SOLANO GIOVANA LUVIA","CASTELLON FLORES MATIAS ALBERTH","CONDORI APAZA BEYMAR FERNANDO","CONDORI HUARACHI ARIANA ONIEL","CONDORI HUARACHI NAHOMI FERNANDA","CORTEZ GARCIA ALINE","ENRRIQUEZ FLORES LEONEL SANTIAGO","ESCARAY FERNANDEZ JERARD THIAGO","FRANCO BUEZO VICTOR GABRIEL","GUTIERREZ PINTO JHEIDAN MATIAS","LIMA VELEZ SAMANTHA","LUNA BUSTILLOS KAELD FABIAN","MALDONADO MENDOZA ANDERS","MERIDA SEVERICH LUIS GERALD","ORDOÑEZ CASSANDRA","PINTO SILES VALENTINA SARA","SAAVEDRA SERRANO ITAN SEBASTIAN","SANJINEZ QUISPE LUIS DANIEL","SOLIZ ARANDIA EMMA ASUNCION","SOLIZ ARANDIA JAY","TAPIA MENDOZA CAMILA ANTONELLA"],
   "1ro Secundaria":["BALLEJOS BROZOVIC BASTIAM","BALLEJOS BROZOVIC THIAGO","CABEZAS SANDOVAL MAYTE GARDENIA","CESPEDES RODRIGUEZ ITALO ALEJANDRO","CORIA LAFUENTE MATEO","ESPER EYSI ANTONIO","GUTIERREZ PADILLA SHAX MIDAEL","HEREDIA SAUCEDO ABRIL JOHARA","MAMANI TOLEDO JHANDY","MERCADO GARCIA DANNY SAORI","NIEVES ZAMBRANA MANUEL","PARDO MOSCO RACHEL EILEEN","PAYE CACERES NEYMAR SANTIGO","PIZARRO QUIROZ JUAN JUVENAL","QUISPE SALAZAR EUNIS MIKEYLA","ROCABADO FLORES JAFET UZIEL","RODRIGUEZ VARGAS ALEXIA PRIYANCA","TAPIA MENDOZA LUCIANA NICOL"],
-  "2do Secundaria":["ADRIAN ACOSTA BIEL GUNAR","ARCE HACHES SEBASTIAN JHOAB","BLANCO AVALOS JAZLYN KATRYNA","BORDA FLORES JOSE ENRRIQUE","CARACILA RAMOS HYRUM UZZIEL","CARDONA ARCE LUZ ALBA","CATARI PEREZ SAMIRA","CONDORI APAZA HECTOR CALEB","GARCIA SERRANO MISAEL","HARDING HARDING CRYSTAL HADASA","HERBAS ARIAS JESUS ANGEL","MENDEZ AGUIRRE ASHLEY MELANI","MUÃ‘OZ ROCHA MELINA ISABEL","QUECA QUIÃ‘ONEZ KAREN VIUVANA","QUISPE PACO MATIAS ALEXANDER","RODRIGUEZ QUISPE ALEXANDER SANTIAGO","RONCAL CATELLON NINON","SOLIZ MENDIETA LUIS DANIEL","TERAN RAMAYO RONALD ANDRES","VILLARROEL DIAZ LUCIANA VICTORIA","VILLARROEL GUARDIA JESUS MANUEL"],
-  "3ro Secundaria":["ACAPA VALDEZ BRAYAN","AGREDA AMURRIO ANTONIO","ALIAGA PADILLA KEVIN JHEICOB","ANDRADE CADENA JHASSMIN NAHOMI","APAZA CADIMA JOEL GONZALO","BELTRAN JERIA VALENTINA","COLQUE LIZARAZU GABRIEL FELIX","CORIA LAFUENTE XAVI","CORTEZ GARCIA AYSEL GRECIA","CUENCA MARCA YAHIDY VIANNETH","FLORES CARRASCO GERALDINE ALIZON","GOMEZ SALAZAR MARIEL ALEJANDRA","HARDING HARDING BENJAMIN LEE","MEDINA TABORGA RAFAELLA","MORALES BUSTAMANTE ANAHI ROSARIO","ORTIZ QUISPE RODRIGO ALBERTO","PARDO CAMARA VALENTINA","PECHO ALVAREZ JESUS SANTIAGO","PEREZ ZENTENO ANELY BRISEYDA","RODRIGUEZ GARCIA JHEFERSON MATIAS","ROMERO MAYGUA ISAAC","SANCHEZ BALTAZAR CHRISTIAN ANDRES","SANJINEZ QUISPE AMANDA","TORRICO LOPEZ FABIO","URIBE VELARDE ISABELLA","URIZAR MADRID TIMOTHY","ZURITA TREVIÃ‘O GRIS AINOHA"],
-  "4to Secundaria":["ACOSTA ADRIAN VASNI ARISAY","AREVALO BALANCA ANTONY FAVIAN","AYALA ALVAREZ JOAN ANDREU","BALDERRAMA MEDRANO LUCAS NOEL","BAPTISTA SOLANO JHACK DEYVID","BERRIOS RODRIGUEZ JOSE ALEJANDRO","CANEDO PEÃ‘ALOZA CRISVEL BRICEIDA","CANIZARES ENRIQUEZ JOHN ERICK","CORIA MAYTE LUCIANA","ESPINOZA HUANCA THAIS MELANY","EYZAGUIRRE EAMARA WENDY","FLORES LAFUENTE ERWIN DAVID","LAVADO LOPEZ ISABEL SDENKA","MEDRANO SORIA MISAEL JESUS","MEJIA FELIPEZ ALEJANDRO","MENDEZ AGUIRRE ALDRIN ALEJANDRO","MENDIETA GARCIA ANDRE SIMON","PAYE CACERES JHENNIFER NICOLE","PEREZ CONDORI IAN RODRIGO","PILCO CRUZ ELIENAI ABIGAIL","RAMOS QUIROZ ANDREA FERNANDA","SAAVEDRA SERRANO BRETT ANDRE","TIBUBAY AYALA LEONEL","TORO MIQUI RONALD CRISTIAN","VELA CANAVIRI NATALIA ANNEL","VELASQUEZ GARCES JHENELY","VISCARRA PAZ LEANDRO","ZABALA MARQUEZ SILVIA JESSICA"],
+  "2do Secundaria":["ADRIAN ACOSTA BIEL GUNAR","ARCE HACHES SEBASTIAN JHOAB","BLANCO AVALOS JAZLYN KATRYNA","BORDA FLORES JOSE ENRRIQUE","CARACILA RAMOS HYRUM UZZIEL","CARDONA ARCE LUZ ALBA","CATARI PEREZ SAMIRA","CONDORI APAZA HECTOR CALEB","GARCIA SERRANO MISAEL","HARDING HARDING CRYSTAL HADASA","HERBAS ARIAS JESUS ANGEL","MENDEZ AGUIRRE ASHLEY MELANI","MUÑOZ ROCHA MELINA ISABEL","QUECA QUIÑONEZ KAREN VIUVANA","QUISPE PACO MATIAS ALEXANDER","RODRIGUEZ QUISPE ALEXANDER SANTIAGO","RONCAL CATELLON NINON","SOLIZ MENDIETA LUIS DANIEL","TERAN RAMAYO RONALD ANDRES","VILLARROEL DIAZ LUCIANA VICTORIA","VILLARROEL GUARDIA JESUS MANUEL"],
+  "3ro Secundaria":["ACAPA VALDEZ BRAYAN","AGREDA AMURRIO ANTONIO","ALIAGA PADILLA KEVIN JHEICOB","ANDRADE CADENA JHASSMIN NAHOMI","APAZA CADIMA JOEL GONZALO","BELTRAN JERIA VALENTINA","COLQUE LIZARAZU GABRIEL FELIX","CORIA LAFUENTE XAVI","CORTEZ GARCIA AYSEL GRECIA","CUENCA MARCA YAHIDY VIANNETH","FLORES CARRASCO GERALDINE ALIZON","GOMEZ SALAZAR MARIEL ALEJANDRA","HARDING HARDING BENJAMIN LEE","MEDINA TABORGA RAFAELLA","MORALES BUSTAMANTE ANAHI ROSARIO","ORTIZ QUISPE RODRIGO ALBERTO","PARDO CAMARA VALENTINA","PECHO ALVAREZ JESUS SANTIAGO","PEREZ ZENTENO ANELY BRISEYDA","RODRIGUEZ GARCIA JHEFERSON MATIAS","ROMERO MAYGUA ISAAC","SANCHEZ BALTAZAR CHRISTIAN ANDRES","SANJINEZ QUISPE AMANDA","TORRICO LOPEZ FABIO","URIBE VELARDE ISABELLA","URIZAR MADRID TIMOTHY","ZURITA TREVIÑO GRIS AINOHA"],
+  "4to Secundaria":["ACOSTA ADRIAN VASNI ARISAY","AREVALO BALANCA ANTONY FAVIAN","AYALA ALVAREZ JOAN ANDREU","BALDERRAMA MEDRANO LUCAS NOEL","BAPTISTA SOLANO JHACK DEYVID","BERRIOS RODRIGUEZ JOSE ALEJANDRO","CANEDO PEÑALOZA CRISVEL BRICEIDA","CANIZARES ENRIQUEZ JOHN ERICK","CORIA MAYTE LUCIANA","ESPINOZA HUANCA THAIS MELANY","EYZAGUIRRE EAMARA WENDY","FLORES LAFUENTE ERWIN DAVID","LAVADO LOPEZ ISABEL SDENKA","MEDRANO SORIA MISAEL JESUS","MEJIA FELIPEZ ALEJANDRO","MENDEZ AGUIRRE ALDRIN ALEJANDRO","MENDIETA GARCIA ANDRE SIMON","PAYE CACERES JHENNIFER NICOLE","PEREZ CONDORI IAN RODRIGO","PILCO CRUZ ELIENAI ABIGAIL","RAMOS QUIROZ ANDREA FERNANDA","SAAVEDRA SERRANO BRETT ANDRE","TIBUBAY AYALA LEONEL","TORO MIQUI RONALD CRISTIAN","VELA CANAVIRI NATALIA ANNEL","VELASQUEZ GARCES JHENELY","VISCARRA PAZ LEANDRO","ZABALA MARQUEZ SILVIA JESSICA"],
   "5to Secundaria":["ADRIAN MACHICADO HANZ","ANGULO AGUILAR JHAIR","CALLISAYA PEREZ ERICK RAFAEL","CARACILA RAMOS ANELISSE","CHOQUE TUCO JESUS LEONEL","CORIA LAFUENTE JHOSUE ALEJANDRO","FUENTES CRISPIN NEYTAN","GOMEZ VELA MARIA JOSE","GREGORIO MURUCHI JOSE ALEJANDRO","HARDING HARDING ENOC BRYAN","HURTADO POCOMANI DEREK SANTIAGO","LEDEZMA LAIME KALED SANTIAGO","LIMA VELEZ MAHELY","LOVERA JIMENEZ MAXWUELL DIEGO","MEDRANO SORIA ISAEL JHONATAN","MONTOYA RAMOS ARELIS GENESIS","PEREZ ALCON PAOLO ALESANDRO","PLAZA MERCADO HUGO FRANCISCO","QUIROZ QUINTANA DUSAN DEYVI","QUISPE CHALLCO NAYLA JAZMIN","QUISPE SALAZAR VIVIAN MICAELA","REYEZ TORREZ KALEP ALEXANDER","RIOS FLORES JUAN JOEL","ROJAS MERCADO ESTEFANY NICOL","ROJAS MERCADO MARCELA ROXANA","ROMERO NAVA VALERIA SARAHI","TIRADO MARTINEZ LUCIANA","VARGAS AVILA MATIAS SAMUEL","VARGAS ROCA MARGOTH"],
   "6to Secundaria":["ACHA VILLARROEL BEYMAR","AMADO CABEZAS RAFAELA BELEN","CALDERON ROJAS JOSE ANDRES","CASTELLON ZELAYA PATRICIA","CORDERO MOYA ANGELY MARTHA","FLORES MAMANI KATERIN BELEN","GLADE CASTELLON SALVADOR","GOMEZ VELA MELANY YESICA","MALDONADO ALMANZA IVAN","MENDEZ AGUIRRE ANDRU ARIEL","NOGALES QUIROZ KEYTI ISABEL","OVANDO VELEZ NEL","PAYE CACERES LUIS ANGEL","PERALTA ARTEAGA AMBEIRON JUAN","PEREZ LLANOS SAMUEL ESTEBAN","PIZARRO QUIROZ PAOLA FANNY","VALLEJOS PEREZ JHERSON","ZEBALLOS PADILLA ORIANA"]
 };
 const CURSOS=Object.keys(ID);
 const PRIM=['1ro Primaria','2do Primaria','3ro Primaria','4to Primaria','5to Primaria','6to Primaria'];
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 // FIREBASE CONFIG & INIT
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -447,9 +447,9 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const fsdb = getFirestore(firebaseApp);
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 // AUTH & STORAGE
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 
 // Users stored locally (just credentials, not grades)
 const USK='cal_users_v1';
@@ -459,7 +459,7 @@ function loadUsers(){
 }
 function saveUsers(u){localStorage.setItem(USK,JSON.stringify(u))}
 
-// Init users â€” create rodrigo if not exists
+// Init users — create rodrigo if not exists
 let users=loadUsers();
 if(!users){
   users={rodrigo:{pass:'123456',created:Date.now()}};
@@ -496,9 +496,20 @@ async function initDb(){
   showLoading(true);
   db=await loadDb();
   if(!db){
-    // Preloaded data for rodrigo â€” migrated from previous version
+    // Intentar migrar desde localStorage si hay datos viejos
+    const oldKeys=['cal_data_v1_'+loggedUser,'cal_data_v1_rodrigo'];
+    for(const k of oldKeys){
+      try{const r=localStorage.getItem(k);if(r){db=JSON.parse(r);break;}}catch(e){}
+    }
+    if(db){
+      // Datos encontrados en localStorage — subirlos a Firebase
+      CURSOS.forEach(c=>{if(!db.cursos[c])db.cursos[c]=[];});
+      await setDoc(doc(fsdb,'calificaciones',loggedUser),{db:JSON.parse(JSON.stringify(db))});
+      showLoading(false);return;
+    }
+    // Preloaded data for rodrigo — migrated from previous version
     if(loggedUser==='rodrigo'){
-      db={"cursos": {"1ro Primaria": [{"id": "e_1773692371904_wowf", "nombre": "BAUTISTA BENANCIO EMMA VICTORIA", "t": 10, "p": 10}, {"id": "e_1773692371904_96k0", "nombre": "COCA RODRIGUEZ DAFNE MICAELA", "t": 10, "p": 10}, {"id": "e_1773692371904_1dv0", "nombre": "COCA RODRIGUEZ EITHAN ALEXANDER", "t": 10, "p": 9}, {"id": "e_1773692371904_2jyn", "nombre": "CONDORI CORIA NICOL CELESTE", "t": 10, "p": 10}, {"id": "e_1773692371904_xcg7", "nombre": "COSTAS TORREZ SAMANTHA EMILIA", "t": 10, "p": 10}, {"id": "e_1773692371904_85n2", "nombre": "LOPEZ TAPIA RICARDO NICOLAS", "t": 5, "p": 10}, {"id": "e_1773692371904_0jja", "nombre": "QUISPE LAZO YESENIA", "t": 5, "p": 10}, {"id": "e_1773692371904_cxcc", "nombre": "SOLIZ ARANDIA ABISH DANTZEL", "t": 10, "p": 10}], "2do Primaria": [{"id": "e_1773692371904_tfvq", "nombre": "AQUINO ESCALERA MAXIMILIANO MATEO", "t": 10, "p": 10}, {"id": "e_1773692371904_g867", "nombre": "BAPTISTA SOLANO ISAAC WALLACE", "t": 10, "p": 10}, {"id": "e_1773692371904_h78y", "nombre": "CHOQUE LUPE MILLET KATHERINE", "t": 9, "p": 10}, {"id": "e_1773692371904_3ilg", "nombre": "COTRINO CACHI JHESABEL JHOMARA", "t": 9, "p": 4}, {"id": "e_1773692371904_npyg", "nombre": "JIMENEZ AMOZABEL BELEN JASMIN", "t": 10, "p": 10}, {"id": "e_1773692371904_yft7", "nombre": "LLANQUE HEVIA LEONARDO ALEXANDRO", "t": 10, "p": 10}, {"id": "e_1773692371904_c3ps", "nombre": "MAIRE PEREZ CATTLEY VALENTINA", "t": 10, "p": 10}, {"id": "e_1773692371904_ctwp", "nombre": "OROZCO ADRIAZOLA ADELAIDA CORAL", "t": 10, "p": 10}, {"id": "e_1773692371904_z2v6", "nombre": "QUINTEROS QUISPE THIAGO FACUNDO", "t": 10, "p": 10}, {"id": "e_1773692371904_7ozx", "nombre": "ROMERO QUISPE MERY CAROLAY", "t": 10, "p": 10}, {"id": "e_1773692371904_7url", "nombre": "ROSSEL JOAN MARTIN", "t": 10, "p": 10}, {"id": "e_1773692371904_4o4n", "nombre": "TRUTA SOLORZANO JOSE LUIS MILAN"}], "3ro Primaria": [{"id": "e_1773692371904_a53m", "nombre": "BALDERRAMA MEDRANO SAUL", "t": 6, "p": 2}, {"id": "e_1773692371904_5ahx", "nombre": "CAMPOS ANCIETA CARLOS SIMON", "t": 3, "p": 3}, {"id": "e_1773692371904_m32n", "nombre": "CARACILA RAMOS RAIZEL ILEIN", "t": 10, "p": 10}, {"id": "e_1773692371904_726b", "nombre": "GUILLEN ARCE MARGARETH ALINA", "t": 3, "p": 1}, {"id": "e_1773692371904_6xyy", "nombre": "LOPEZ BLANCUD APRIL JENNIFER", "t": 9, "p": 5}, {"id": "e_1773692371904_8w8x", "nombre": "MENECES TERAN LIAN DAVID", "t": 3, "p": 5}, {"id": "e_1773692371904_no48", "nombre": "MERIDA SEVERICH PRISCILA ALIZ", "t": 8, "p": 5}, {"id": "e_1773692371904_x346", "nombre": "MINA VELA FATIMA", "t": 10, "p": 1}, {"id": "e_1773692371904_8hfy", "nombre": "MONTECINOS TERRAZAS SIMONE EDITH", "t": 10, "p": 10}, {"id": "e_1773692371904_n7i2", "nombre": "PORTUGAL PEREZ KILLIAM SEBASTIAN", "t": 10, "p": 7}, {"id": "e_1773692371904_2dqf", "nombre": "QUISPE QUISBERT ANGEL SANTIAGO", "t": 10, "p": 8}, {"id": "e_1773692371904_8hux", "nombre": "SOLIZ ARANDIA MARIA ESTHER", "t": 10, "p": 2}, {"id": "e_1773692371904_hblz", "nombre": "TORREZ MORALES DIANA SOFIA"}, {"id": "e_1773692371904_5tei", "nombre": "VARGAS ARRAYA FACUNDO LAUTARO", "t": 10, "p": 10}, {"id": "e_1773692371904_kt0o", "nombre": "ZEBALLOS PADILLA ANTONELLA", "t": 8, "p": 3}, {"id": "e_1773860069512_1nfo", "nombre": "MOYA ARGANDOÃ‘A ALISSON MIA", "t": 6, "p": 4}], "4to Primaria": [{"id": "e_1773692371904_ntcl", "nombre": "APAZA TORRICO SEBASTIAN", "t": 9, "p": 3}, {"id": "e_1773692371904_yp0e", "nombre": "ARANIBAR MENDOZA SEBASTIAN THIAGO", "t": 9, "p": 9}, {"id": "e_1773692371904_lslb", "nombre": "FERNANDEZ MALLEA SELIM RAHUL", "t": 10, "p": 8}, {"id": "e_1773692371904_3gn2", "nombre": "GANDARILLAS BARAHONA AINHOA SARAI", "t": 9, "p": 6}, {"id": "e_1773692371904_au6f", "nombre": "MIRANDA BARAHONA LUCIANA VALENTINA", "t": 9, "p": 9}, {"id": "e_1773692371904_holq", "nombre": "ORIHUELA URIBE THIAGO JHILMAR", "t": 9, "p": 4}, {"id": "e_1773692371904_nhsw", "nombre": "PINTO SILES ISAC FABRICIO", "t": 0}, {"id": "e_1773692371904_p6um", "nombre": "RAMALLO ZELAYA KEISY CAMILA", "t": 7, "p": 3}, {"id": "e_1773692371904_nqst", "nombre": "SOLIZ ARANDIA YOLANDA CAMILA", "t": 10, "p": 8}], "5to Primaria": [{"id": "e_1773692371904_jo8p", "nombre": "BALDERRAMA MEDRANO JOAQUIN", "t": 9, "p": 6}, {"id": "e_1773692371904_fjqx", "nombre": "BAUTISTA BENANCIO SANTIAGO ANDRES", "p": 8, "t": 10}, {"id": "e_1773692371904_lffp", "nombre": "CARACILA RAMOS NAZLI LUZIANE", "t": 10, "p": 10}, {"id": "e_1773692371904_dmvb", "nombre": "CASTILLO MARCA AARON ALCIDEZ", "t": 9, "p": 6}, {"id": "e_1773692371904_zqli", "nombre": "CRISTALDO MARTINEZ VALENTINA GABRIELA", "t": 8, "p": 4}, {"id": "e_1773692371904_iq9a", "nombre": "FELIPES RIOS MAYTE YADITH", "t": 4, "p": 5}, {"id": "e_1773692371904_lddl", "nombre": "MENDIETA GARCIA GENESIS ARIANA", "t": 10, "p": 10}, {"id": "e_1773692371904_yh7l", "nombre": "MENECES TERAN ASHLY THAIZ", "t": 10, "p": 9}, {"id": "e_1773692371904_wqlo", "nombre": "MERCADO GARCIA ANNIE VALENTINA", "t": 10, "p": 10}, {"id": "e_1773692371904_15ea", "nombre": "VARGAS CESPEDES EYVI VALENTINA", "t": 10, "p": 4}], "6to Primaria": [{"id": "e_1773692371904_ifgq", "nombre": "ANDRADE RIVA DIEGO ARTURO", "t": 9, "p": 9}, {"id": "e_1773692371904_urf5", "nombre": "BAPTISTA SOLANO GIOVANA LUVIA", "t": 9, "p": 9}, {"id": "e_1773692371904_1lz7", "nombre": "CASTELLON FLORES MATIAS ALBERTH", "t": 9, "p": 3}, {"id": "e_1773692371904_41jn", "nombre": "CONDORI APAZA BEYMAR FERNANDO", "t": 8, "p": 4}, {"id": "e_1773692371904_ld1d", "nombre": "CONDORI HUARACHI ARIANA ONIEL", "t": 10, "p": 10}, {"id": "e_1773692371904_pseg", "nombre": "CONDORI HUARACHI NAHOMI FERNANDA", "t": 10, "p": 10}, {"id": "e_1773692371904_z65g", "nombre": "CORTEZ GARCIA ALINE", "t": 6, "p": 5}, {"id": "e_1773692371904_jq35", "nombre": "ENRRIQUEZ FLORES LEONEL SANTIAGO", "t": 10, "p": 4}, {"id": "e_1773692371904_zjon", "nombre": "ESCARAY FERNANDEZ JERARD THIAGO", "t": 10, "p": 7}, {"id": "e_1773692371904_q7au", "nombre": "FRANCO BUEZO VICTOR GABRIEL", "t": 10, "p": 8}, {"id": "e_1773692371904_mnv7", "nombre": "GUTIERREZ PINTO JHEIDAN MATIAS", "t": 9, "p": 0}, {"id": "e_1773692371904_jzt3", "nombre": "LIMA VELEZ SAMANTHA", "t": 10, "p": 8}, {"id": "e_1773692371904_habu", "nombre": "LUNA BUSTILLOS KAELD FABIAN", "t": 10, "p": 10}, {"id": "e_1773692371904_q8db", "nombre": "MALDONADO MENDOZA ANDERS", "t": 10, "p": 10}, {"id": "e_1773692371904_d55u", "nombre": "MERIDA SEVERICH LUIS GERALD", "t": 9, "p": 7}, {"id": "e_1773692371904_jn49", "nombre": "ORDOÃ‘EZ CASSANDRA", "t": 10, "p": 10}, {"id": "e_1773692371904_a5jr", "nombre": "PINTO SILES VALENTINA SARA", "t": 10, "p": 10}, {"id": "e_1773692371904_81kc", "nombre": "SAAVEDRA SERRANO ITAN SEBASTIAN", "t": 10, "p": 10}, {"id": "e_1773692371904_pxmd", "nombre": "SANJINEZ QUISPE LUIS DANIEL", "t": 10, "p": 9}, {"id": "e_1773692371904_v2bi", "nombre": "SOLIZ ARANDIA EMMA ASUNCION", "p": 10, "t": 10}, {"id": "e_1773692371904_pzm9", "nombre": "SOLIZ ARANDIA JAY", "t": 10, "p": 10}, {"id": "e_1773692371904_0heq", "nombre": "TAPIA MENDOZA CAMILA ANTONELLA", "p": 10, "t": 10}, {"id": "e_1773866476134_kceo", "nombre": "ZAYN PAUL", "t": 8, "p": 8}], "1ro Secundaria": [{"id": "e_1773692371904_dj0b", "nombre": "BALLEJOS BROZOVIC BASTIAM", "t": 9, "p": 15}, {"id": "e_1773692371904_icel", "nombre": "BALLEJOS BROZOVIC THIAGO", "t": 9, "p": 15}, {"id": "e_1773692371904_zcjf", "nombre": "CABEZAS SANDOVAL MAYTE GARDENIA", "t": 0, "p": 0}, {"id": "e_1773692371904_qcbi", "nombre": "CESPEDES RODRIGUEZ ITALO ALEJANDRO", "t": 10, "p": 15}, {"id": "e_1773692371904_aox8", "nombre": "CORIA LAFUENTE MATEO", "t": 5, "p": 1}, {"id": "e_1773692371904_8n6p", "nombre": "ESPER EYSI ANTONIO"}, {"id": "e_1773692371904_8to3", "nombre": "GUTIERREZ PADILLA SHAX MIDAEL", "t": 10, "p": 15}, {"id": "e_1773692371904_q56e", "nombre": "HEREDIA SAUCEDO ABRIL JOHARA", "t": 9, "p": 15}, {"id": "e_1773692371904_inp9", "nombre": "MAMANI TOLEDO JHANDY", "t": 6, "p": 2}, {"id": "e_1773692371904_89j1", "nombre": "MERCADO GARCIA DANNY SAORI", "t": 9, "p": 10}, {"id": "e_1773692371904_a04q", "nombre": "NIEVES ZAMBRANA MANUEL", "t": 6, "p": 4}, {"id": "e_1773692371904_73pq", "nombre": "PARDO MOSCO RACHEL EILEEN"}, {"id": "e_1773692371904_6t41", "nombre": "PAYE CACERES NEYMAR SANTIGO", "t": 9, "p": 9}, {"id": "e_1773692371904_6jg3", "nombre": "PIZARRO QUIROZ JUAN JUVENAL", "t": 5, "p": 6}, {"id": "e_1773692371904_abjm", "nombre": "QUISPE SALAZAR EUNIS MIKEYLA", "t": 6, "p": 15}, {"id": "e_1773692371904_pecz", "nombre": "ROCABADO FLORES JAFET UZIEL"}, {"id": "e_1773692371904_sw7n", "nombre": "RODRIGUEZ VARGAS ALEXIA PRIYANCA", "t": 6, "p": 7}, {"id": "e_1773692371904_n0rz", "nombre": "TAPIA MENDOZA LUCIANA NICOL", "t": 10, "p": 15}], "2do Secundaria": [{"id": "e_1773692371904_wa7v", "nombre": "ADRIAN ACOSTA BIEL GUNAR", "t": 10, "p": 15}, {"id": "e_1773692371904_mgf5", "nombre": "ARCE HACHES SEBASTIAN JHOAB", "t": 8, "p": 9}, {"id": "e_1773692371904_ojbs", "nombre": "BLANCO AVALOS JAZLYN KATRYNA", "t": 7, "p": 3}, {"id": "e_1773692371904_j2vu", "nombre": "BORDA FLORES JOSE ENRRIQUE", "t": 5, "p": 1}, {"id": "e_1773692371904_oal3", "nombre": "CARACILA RAMOS HYRUM UZZIEL", "t": 10, "p": 15}, {"id": "e_1773692371904_f3sw", "nombre": "CARDONA ARCE LUZ ALBA", "t": 6, "p": 15}, {"id": "e_1773692371904_4hqm", "nombre": "CATARI PEREZ SAMIRA", "t": 10, "p": 13}, {"id": "e_1773692371904_ifod", "nombre": "CONDORI APAZA HECTOR CALEB", "t": 9, "p": 12}, {"id": "e_1773692371904_fm80", "nombre": "GARCIA SERRANO MISAEL"}, {"id": "e_1773692371904_ib20", "nombre": "HARDING HARDING CRYSTAL HADASA", "t": 4, "p": 1}, {"id": "e_1773692371904_8e6y", "nombre": "HERBAS ARIAS JESUS ANGEL", "t": 9, "p": 12}, {"id": "e_1773692371904_vh7g", "nombre": "MENDEZ AGUIRRE ASHLEY MELANI", "t": 8, "p": 8}, {"id": "e_1773692371904_roks", "nombre": "MUÃ‘OZ ROCHA MELINA ISABEL", "t": 10, "p": 4}, {"id": "e_1773692371904_d7o6", "nombre": "QUECA QUIÃ‘ONEZ KAREN VIUVANA", "t": 10, "p": 14}, {"id": "e_1773692371904_2zrk", "nombre": "QUISPE PACO MATIAS ALEXANDER"}, {"id": "e_1773692371904_imta", "nombre": "RODRIGUEZ QUISPE ALEXANDER SANTIAGO"}, {"id": "e_1773692371904_fpfm", "nombre": "RONCAL CATELLON NINON", "t": 8, "p": 15}, {"id": "e_1773692371904_18q2", "nombre": "SOLIZ MENDIETA LUIS DANIEL"}, {"id": "e_1773692371904_n3xw", "nombre": "TERAN RAMAYO RONALD ANDRES", "t": 8, "p": 7}, {"id": "e_1773692371904_d4ql", "nombre": "VILLARROEL DIAZ LUCIANA VICTORIA", "t": 4, "p": 6}, {"id": "e_1773692371904_j4d8", "nombre": "VILLARROEL GUARDIA JESUS MANUEL"}], "3ro Secundaria": [{"id": "e_1773692371904_3t94", "nombre": "ACAPA VALDEZ BRAYAN", "t": 6, "p": 7}, {"id": "e_1773692371904_jcub", "nombre": "AGREDA AMURRIO ANTONIO", "t": 8, "p": 1}, {"id": "e_1773692371904_a41z", "nombre": "ALIAGA PADILLA KEVIN JHEICOB", "t": 10, "p": 1}, {"id": "e_1773692371904_1l6t", "nombre": "ANDRADE CADENA JHASSMIN NAHOMI", "t": 2, "p": 1}, {"id": "e_1773692371904_t83z", "nombre": "APAZA CADIMA JOEL GONZALO", "t": 4, "p": 2}, {"id": "e_1773692371904_7oxg", "nombre": "BELTRAN JERIA VALENTINA"}, {"id": "e_1773692371904_qdqy", "nombre": "COLQUE LIZARAZU GABRIEL FELIX", "t": 5, "p": 5}, {"id": "e_1773692371904_7viy", "nombre": "CORIA LAFUENTE XAVI", "t": 3, "p": 2}, {"id": "e_1773692371904_8p77", "nombre": "CORTEZ GARCIA AYSEL GRECIA", "t": 10, "p": 10}, {"id": "e_1773692371904_6qeg", "nombre": "CUENCA MARCA YAHIDY VIANNETH", "t": 10, "p": 7}, {"id": "e_1773692371904_fhv7", "nombre": "FLORES CARRASCO GERALDINE ALIZON", "t": 5, "p": 3}, {"id": "e_1773692371904_bwfp", "nombre": "GOMEZ SALAZAR MARIEL ALEJANDRA", "t": 8, "p": 8}, {"id": "e_1773692371904_rnxn", "nombre": "HARDING HARDING BENJAMIN LEE", "t": 10, "p": 9}, {"id": "e_1773692371904_hsru", "nombre": "MEDINA TABORGA RAFAELLA"}, {"id": "e_1773692371904_j1p2", "nombre": "MORALES BUSTAMANTE ANAHI ROSARIO", "t": 8, "p": 9}, {"id": "e_1773692371904_o5f6", "nombre": "ORTIZ QUISPE RODRIGO ALBERTO"}, {"id": "e_1773692371904_w5uo", "nombre": "PARDO CAMARA VALENTINA", "t": 8, "p": 9}, {"id": "e_1773692371904_ppgq", "nombre": "PECHO ALVAREZ JESUS SANTIAGO", "t": 4, "p": 8}, {"id": "e_1773692371904_s6xo", "nombre": "PEREZ ZENTENO ANELY BRISEYDA", "t": 9, "p": 4}, {"id": "e_1773692371904_1orb", "nombre": "RODRIGUEZ GARCIA JHEFERSON MATIAS", "t": 8, "p": 13}, {"id": "e_1773692371904_xmmb", "nombre": "ROMERO MAYGUA ISAAC", "t": 7, "p": 8}, {"id": "e_1773692371904_2ujh", "nombre": "SANCHEZ BALTAZAR CHRISTIAN ANDRES", "t": 8, "p": 10}, {"id": "e_1773692371904_egjw", "nombre": "SANJINEZ QUISPE AMANDA", "t": 10, "p": 13}, {"id": "e_1773692371904_njuf", "nombre": "TORRICO LOPEZ FABIO", "t": 5, "p": 2}, {"id": "e_1773692371904_966e", "nombre": "URIBE VELARDE ISABELLA", "t": 7, "p": 2}, {"id": "e_1773692371904_j0nd", "nombre": "URIZAR MADRID TIMOTHY", "t": 5, "p": 1}, {"id": "e_1773692371904_2jaf", "nombre": "ZURITA TREVIÃ‘O GRIS AINOHA", "t": 6, "p": 4}, {"id": "e_1773709601256_ulug", "nombre": "PATIÃ‘O CHAVEZ DILAN", "t": 7, "p": 6}], "4to Secundaria": [{"id": "e_1773692371905_jjhf", "nombre": "ACOSTA ADRIAN VASNI ARISAY"}, {"id": "e_1773692371905_0zlc", "nombre": "AREVALO BALANCA ANTONY FAVIAN"}, {"id": "e_1773692371905_tzih", "nombre": "AYALA ALVAREZ JOAN ANDREU"}, {"id": "e_1773692371905_dr1z", "nombre": "BALDERRAMA MEDRANO LUCAS NOEL"}, {"id": "e_1773692371905_qdk4", "nombre": "BAPTISTA SOLANO JHACK DEYVID"}, {"id": "e_1773692371905_2903", "nombre": "BERRIOS RODRIGUEZ JOSE ALEJANDRO"}, {"id": "e_1773692371905_qluu", "nombre": "CANEDO PEÃ‘ALOZA CRISVEL BRICEIDA"}, {"id": "e_1773692371905_pe46", "nombre": "CANIZARES ENRIQUEZ JOHN ERICK"}, {"id": "e_1773692371905_gl6f", "nombre": "CORIA MAYTE LUCIANA"}, {"id": "e_1773692371905_hgb2", "nombre": "ESPINOZA HUANCA THAIS MELANY"}, {"id": "e_1773692371905_fu4n", "nombre": "EYZAGUIRRE EAMARA WENDY"}, {"id": "e_1773692371905_507m", "nombre": "FLORES LAFUENTE ERWIN DAVID"}, {"id": "e_1773692371905_g8be", "nombre": "LAVADO LOPEZ ISABEL SDENKA"}, {"id": "e_1773692371905_bzrf", "nombre": "MEDRANO SORIA MISAEL JESUS"}, {"id": "e_1773692371905_al1q", "nombre": "MEJIA FELIPEZ ALEJANDRO"}, {"id": "e_1773692371905_6es9", "nombre": "MENDEZ AGUIRRE ALDRIN ALEJANDRO"}, {"id": "e_1773692371905_4wso", "nombre": "MENDIETA GARCIA ANDRE SIMON"}, {"id": "e_1773692371905_87t8", "nombre": "PAYE CACERES JHENNIFER NICOLE"}, {"id": "e_1773692371905_pi37", "nombre": "PEREZ CONDORI IAN RODRIGO"}, {"id": "e_1773692371905_ns8q", "nombre": "PILCO CRUZ ELIENAI ABIGAIL"}, {"id": "e_1773692371905_gjh7", "nombre": "RAMOS QUIROZ ANDREA FERNANDA"}, {"id": "e_1773692371905_ip6y", "nombre": "SAAVEDRA SERRANO BRETT ANDRE"}, {"id": "e_1773692371905_srfm", "nombre": "TIBUBAY AYALA LEONEL"}, {"id": "e_1773692371905_x6dk", "nombre": "TORO MIQUI RONALD CRISTIAN"}, {"id": "e_1773692371905_pewt", "nombre": "VELA CANAVIRI NATALIA ANNEL"}, {"id": "e_1773692371905_dndp", "nombre": "VELASQUEZ GARCES JHENELY"}, {"id": "e_1773692371905_3fvh", "nombre": "VISCARRA PAZ LEANDRO"}, {"id": "e_1773692371905_kx5v", "nombre": "ZABALA MARQUEZ SILVIA JESSICA"}], "5to Secundaria": [{"id": "e_1773692371905_cxad", "nombre": "ADRIAN MACHICADO HANZ"}, {"id": "e_1773692371905_omij", "nombre": "ANGULO AGUILAR JHAIR"}, {"id": "e_1773692371905_p3ah", "nombre": "CALLISAYA PEREZ ERICK RAFAEL"}, {"id": "e_1773692371905_ok1v", "nombre": "CARACILA RAMOS ANELISSE"}, {"id": "e_1773692371905_55bt", "nombre": "CHOQUE TUCO JESUS LEONEL"}, {"id": "e_1773692371905_bncw", "nombre": "CORIA LAFUENTE JHOSUE ALEJANDRO"}, {"id": "e_1773692371905_c0qz", "nombre": "FUENTES CRISPIN NEYTAN"}, {"id": "e_1773692371905_b405", "nombre": "GOMEZ VELA MARIA JOSE"}, {"id": "e_1773692371905_ofi0", "nombre": "GREGORIO MURUCHI JOSE ALEJANDRO"}, {"id": "e_1773692371905_tp1m", "nombre": "HARDING HARDING ENOC BRYAN"}, {"id": "e_1773692371905_d2th", "nombre": "HURTADO POCOMANI DEREK SANTIAGO"}, {"id": "e_1773692371905_xg6z", "nombre": "LEDEZMA LAIME KALED SANTIAGO"}, {"id": "e_1773692371905_0re1", "nombre": "LIMA VELEZ MAHELY"}, {"id": "e_1773692371905_kqq5", "nombre": "LOVERA JIMENEZ MAXWUELL DIEGO"}, {"id": "e_1773692371905_vg97", "nombre": "MEDRANO SORIA ISAEL JHONATAN"}, {"id": "e_1773692371905_zqz7", "nombre": "MONTOYA RAMOS ARELIS GENESIS"}, {"id": "e_1773692371905_wujv", "nombre": "PEREZ ALCON PAOLO ALESANDRO"}, {"id": "e_1773692371905_dxja", "nombre": "PLAZA MERCADO HUGO FRANCISCO"}, {"id": "e_1773692371905_brjo", "nombre": "QUIROZ QUINTANA DUSAN DEYVI"}, {"id": "e_1773692371905_kchx", "nombre": "QUISPE CHALLCO NAYLA JAZMIN"}, {"id": "e_1773692371905_3aq0", "nombre": "QUISPE SALAZAR VIVIAN MICAELA"}, {"id": "e_1773692371905_h6ik", "nombre": "REYEZ TORREZ KALEP ALEXANDER"}, {"id": "e_1773692371905_397c", "nombre": "RIOS FLORES JUAN JOEL"}, {"id": "e_1773692371905_979i", "nombre": "ROJAS MERCADO ESTEFANY NICOL"}, {"id": "e_1773692371905_uzcg", "nombre": "ROJAS MERCADO MARCELA ROXANA"}, {"id": "e_1773692371905_1s38", "nombre": "ROMERO NAVA VALERIA SARAHI"}, {"id": "e_1773692371905_2ql6", "nombre": "TIRADO MARTINEZ LUCIANA"}, {"id": "e_1773692371905_b2fv", "nombre": "VARGAS AVILA MATIAS SAMUEL"}, {"id": "e_1773692371905_4jl3", "nombre": "VARGAS ROCA MARGOTH"}], "6to Secundaria": [{"id": "e_1773692371905_u05y", "nombre": "ACHA VILLARROEL BEYMAR"}, {"id": "e_1773692371905_mgo2", "nombre": "AMADO CABEZAS RAFAELA BELEN"}, {"id": "e_1773692371905_a21u", "nombre": "CALDERON ROJAS JOSE ANDRES"}, {"id": "e_1773692371905_wtcg", "nombre": "CASTELLON ZELAYA PATRICIA"}, {"id": "e_1773692371905_9up7", "nombre": "CORDERO MOYA ANGELY MARTHA"}, {"id": "e_1773692371905_nxxi", "nombre": "FLORES MAMANI KATERIN BELEN"}, {"id": "e_1773692371905_tqg3", "nombre": "GLADE CASTELLON SALVADOR"}, {"id": "e_1773692371905_2264", "nombre": "GOMEZ VELA MELANY YESICA"}, {"id": "e_1773692371905_p11l", "nombre": "MALDONADO ALMANZA IVAN"}, {"id": "e_1773692371905_dvty", "nombre": "MENDEZ AGUIRRE ANDRU ARIEL"}, {"id": "e_1773692371905_odbt", "nombre": "NOGALES QUIROZ KEYTI ISABEL"}, {"id": "e_1773692371905_zi9l", "nombre": "OVANDO VELEZ NEL"}, {"id": "e_1773692371905_33q7", "nombre": "PAYE CACERES LUIS ANGEL"}, {"id": "e_1773692371905_77no", "nombre": "PERALTA ARTEAGA AMBEIRON JUAN"}, {"id": "e_1773692371905_b5rd", "nombre": "PEREZ LLANOS SAMUEL ESTEBAN"}, {"id": "e_1773692371905_jkhd", "nombre": "PIZARRO QUIROZ PAOLA FANNY"}, {"id": "e_1773692371905_ehbo", "nombre": "VALLEJOS PEREZ JHERSON"}, {"id": "e_1773692371905_5rh2", "nombre": "ZEBALLOS PADILLA ORIANA"}]}};
+      db={"cursos": {"1ro Primaria": [{"id": "e_1773692371904_wowf", "nombre": "BAUTISTA BENANCIO EMMA VICTORIA", "t": 10, "p": 10}, {"id": "e_1773692371904_96k0", "nombre": "COCA RODRIGUEZ DAFNE MICAELA", "t": 10, "p": 10}, {"id": "e_1773692371904_1dv0", "nombre": "COCA RODRIGUEZ EITHAN ALEXANDER", "t": 10, "p": 9}, {"id": "e_1773692371904_2jyn", "nombre": "CONDORI CORIA NICOL CELESTE", "t": 10, "p": 10}, {"id": "e_1773692371904_xcg7", "nombre": "COSTAS TORREZ SAMANTHA EMILIA", "t": 10, "p": 10}, {"id": "e_1773692371904_85n2", "nombre": "LOPEZ TAPIA RICARDO NICOLAS", "t": 5, "p": 10}, {"id": "e_1773692371904_0jja", "nombre": "QUISPE LAZO YESENIA", "t": 5, "p": 10}, {"id": "e_1773692371904_cxcc", "nombre": "SOLIZ ARANDIA ABISH DANTZEL", "t": 10, "p": 10}], "2do Primaria": [{"id": "e_1773692371904_tfvq", "nombre": "AQUINO ESCALERA MAXIMILIANO MATEO", "t": 10, "p": 10}, {"id": "e_1773692371904_g867", "nombre": "BAPTISTA SOLANO ISAAC WALLACE", "t": 10, "p": 10}, {"id": "e_1773692371904_h78y", "nombre": "CHOQUE LUPE MILLET KATHERINE", "t": 9, "p": 10}, {"id": "e_1773692371904_3ilg", "nombre": "COTRINO CACHI JHESABEL JHOMARA", "t": 9, "p": 4}, {"id": "e_1773692371904_npyg", "nombre": "JIMENEZ AMOZABEL BELEN JASMIN", "t": 10, "p": 10}, {"id": "e_1773692371904_yft7", "nombre": "LLANQUE HEVIA LEONARDO ALEXANDRO", "t": 10, "p": 10}, {"id": "e_1773692371904_c3ps", "nombre": "MAIRE PEREZ CATTLEY VALENTINA", "t": 10, "p": 10}, {"id": "e_1773692371904_ctwp", "nombre": "OROZCO ADRIAZOLA ADELAIDA CORAL", "t": 10, "p": 10}, {"id": "e_1773692371904_z2v6", "nombre": "QUINTEROS QUISPE THIAGO FACUNDO", "t": 10, "p": 10}, {"id": "e_1773692371904_7ozx", "nombre": "ROMERO QUISPE MERY CAROLAY", "t": 10, "p": 10}, {"id": "e_1773692371904_7url", "nombre": "ROSSEL JOAN MARTIN", "t": 10, "p": 10}, {"id": "e_1773692371904_4o4n", "nombre": "TRUTA SOLORZANO JOSE LUIS MILAN"}], "3ro Primaria": [{"id": "e_1773692371904_a53m", "nombre": "BALDERRAMA MEDRANO SAUL", "t": 6, "p": 2}, {"id": "e_1773692371904_5ahx", "nombre": "CAMPOS ANCIETA CARLOS SIMON", "t": 3, "p": 3}, {"id": "e_1773692371904_m32n", "nombre": "CARACILA RAMOS RAIZEL ILEIN", "t": 10, "p": 10}, {"id": "e_1773692371904_726b", "nombre": "GUILLEN ARCE MARGARETH ALINA", "t": 3, "p": 1}, {"id": "e_1773692371904_6xyy", "nombre": "LOPEZ BLANCUD APRIL JENNIFER", "t": 9, "p": 5}, {"id": "e_1773692371904_8w8x", "nombre": "MENECES TERAN LIAN DAVID", "t": 3, "p": 5}, {"id": "e_1773692371904_no48", "nombre": "MERIDA SEVERICH PRISCILA ALIZ", "t": 8, "p": 5}, {"id": "e_1773692371904_x346", "nombre": "MINA VELA FATIMA", "t": 10, "p": 1}, {"id": "e_1773692371904_8hfy", "nombre": "MONTECINOS TERRAZAS SIMONE EDITH", "t": 10, "p": 10}, {"id": "e_1773692371904_n7i2", "nombre": "PORTUGAL PEREZ KILLIAM SEBASTIAN", "t": 10, "p": 7}, {"id": "e_1773692371904_2dqf", "nombre": "QUISPE QUISBERT ANGEL SANTIAGO", "t": 10, "p": 8}, {"id": "e_1773692371904_8hux", "nombre": "SOLIZ ARANDIA MARIA ESTHER", "t": 10, "p": 2}, {"id": "e_1773692371904_hblz", "nombre": "TORREZ MORALES DIANA SOFIA"}, {"id": "e_1773692371904_5tei", "nombre": "VARGAS ARRAYA FACUNDO LAUTARO", "t": 10, "p": 10}, {"id": "e_1773692371904_kt0o", "nombre": "ZEBALLOS PADILLA ANTONELLA", "t": 8, "p": 3}, {"id": "e_1773860069512_1nfo", "nombre": "MOYA ARGANDOÑA ALISSON MIA", "t": 6, "p": 4}], "4to Primaria": [{"id": "e_1773692371904_ntcl", "nombre": "APAZA TORRICO SEBASTIAN", "t": 9, "p": 3}, {"id": "e_1773692371904_yp0e", "nombre": "ARANIBAR MENDOZA SEBASTIAN THIAGO", "t": 9, "p": 9}, {"id": "e_1773692371904_lslb", "nombre": "FERNANDEZ MALLEA SELIM RAHUL", "t": 10, "p": 8}, {"id": "e_1773692371904_3gn2", "nombre": "GANDARILLAS BARAHONA AINHOA SARAI", "t": 9, "p": 6}, {"id": "e_1773692371904_au6f", "nombre": "MIRANDA BARAHONA LUCIANA VALENTINA", "t": 9, "p": 9}, {"id": "e_1773692371904_holq", "nombre": "ORIHUELA URIBE THIAGO JHILMAR", "t": 9, "p": 4}, {"id": "e_1773692371904_nhsw", "nombre": "PINTO SILES ISAC FABRICIO", "t": 0}, {"id": "e_1773692371904_p6um", "nombre": "RAMALLO ZELAYA KEISY CAMILA", "t": 7, "p": 3}, {"id": "e_1773692371904_nqst", "nombre": "SOLIZ ARANDIA YOLANDA CAMILA", "t": 10, "p": 8}], "5to Primaria": [{"id": "e_1773692371904_jo8p", "nombre": "BALDERRAMA MEDRANO JOAQUIN", "t": 9, "p": 6}, {"id": "e_1773692371904_fjqx", "nombre": "BAUTISTA BENANCIO SANTIAGO ANDRES", "p": 8, "t": 10}, {"id": "e_1773692371904_lffp", "nombre": "CARACILA RAMOS NAZLI LUZIANE", "t": 10, "p": 10}, {"id": "e_1773692371904_dmvb", "nombre": "CASTILLO MARCA AARON ALCIDEZ", "t": 9, "p": 6}, {"id": "e_1773692371904_zqli", "nombre": "CRISTALDO MARTINEZ VALENTINA GABRIELA", "t": 8, "p": 4}, {"id": "e_1773692371904_iq9a", "nombre": "FELIPES RIOS MAYTE YADITH", "t": 4, "p": 5}, {"id": "e_1773692371904_lddl", "nombre": "MENDIETA GARCIA GENESIS ARIANA", "t": 10, "p": 10}, {"id": "e_1773692371904_yh7l", "nombre": "MENECES TERAN ASHLY THAIZ", "t": 10, "p": 9}, {"id": "e_1773692371904_wqlo", "nombre": "MERCADO GARCIA ANNIE VALENTINA", "t": 10, "p": 10}, {"id": "e_1773692371904_15ea", "nombre": "VARGAS CESPEDES EYVI VALENTINA", "t": 10, "p": 4}], "6to Primaria": [{"id": "e_1773692371904_ifgq", "nombre": "ANDRADE RIVA DIEGO ARTURO", "t": 9, "p": 9}, {"id": "e_1773692371904_urf5", "nombre": "BAPTISTA SOLANO GIOVANA LUVIA", "t": 9, "p": 9}, {"id": "e_1773692371904_1lz7", "nombre": "CASTELLON FLORES MATIAS ALBERTH", "t": 9, "p": 3}, {"id": "e_1773692371904_41jn", "nombre": "CONDORI APAZA BEYMAR FERNANDO", "t": 8, "p": 4}, {"id": "e_1773692371904_ld1d", "nombre": "CONDORI HUARACHI ARIANA ONIEL", "t": 10, "p": 10}, {"id": "e_1773692371904_pseg", "nombre": "CONDORI HUARACHI NAHOMI FERNANDA", "t": 10, "p": 10}, {"id": "e_1773692371904_z65g", "nombre": "CORTEZ GARCIA ALINE", "t": 6, "p": 5}, {"id": "e_1773692371904_jq35", "nombre": "ENRRIQUEZ FLORES LEONEL SANTIAGO", "t": 10, "p": 4}, {"id": "e_1773692371904_zjon", "nombre": "ESCARAY FERNANDEZ JERARD THIAGO", "t": 10, "p": 7}, {"id": "e_1773692371904_q7au", "nombre": "FRANCO BUEZO VICTOR GABRIEL", "t": 10, "p": 8}, {"id": "e_1773692371904_mnv7", "nombre": "GUTIERREZ PINTO JHEIDAN MATIAS", "t": 9, "p": 0}, {"id": "e_1773692371904_jzt3", "nombre": "LIMA VELEZ SAMANTHA", "t": 10, "p": 8}, {"id": "e_1773692371904_habu", "nombre": "LUNA BUSTILLOS KAELD FABIAN", "t": 10, "p": 10}, {"id": "e_1773692371904_q8db", "nombre": "MALDONADO MENDOZA ANDERS", "t": 10, "p": 10}, {"id": "e_1773692371904_d55u", "nombre": "MERIDA SEVERICH LUIS GERALD", "t": 9, "p": 7}, {"id": "e_1773692371904_jn49", "nombre": "ORDOÑEZ CASSANDRA", "t": 10, "p": 10}, {"id": "e_1773692371904_a5jr", "nombre": "PINTO SILES VALENTINA SARA", "t": 10, "p": 10}, {"id": "e_1773692371904_81kc", "nombre": "SAAVEDRA SERRANO ITAN SEBASTIAN", "t": 10, "p": 10}, {"id": "e_1773692371904_pxmd", "nombre": "SANJINEZ QUISPE LUIS DANIEL", "t": 10, "p": 9}, {"id": "e_1773692371904_v2bi", "nombre": "SOLIZ ARANDIA EMMA ASUNCION", "p": 10, "t": 10}, {"id": "e_1773692371904_pzm9", "nombre": "SOLIZ ARANDIA JAY", "t": 10, "p": 10}, {"id": "e_1773692371904_0heq", "nombre": "TAPIA MENDOZA CAMILA ANTONELLA", "p": 10, "t": 10}, {"id": "e_1773866476134_kceo", "nombre": "ZAYN PAUL", "t": 8, "p": 8}], "1ro Secundaria": [{"id": "e_1773692371904_dj0b", "nombre": "BALLEJOS BROZOVIC BASTIAM", "t": 9, "p": 15}, {"id": "e_1773692371904_icel", "nombre": "BALLEJOS BROZOVIC THIAGO", "t": 9, "p": 15}, {"id": "e_1773692371904_zcjf", "nombre": "CABEZAS SANDOVAL MAYTE GARDENIA", "t": 0, "p": 0}, {"id": "e_1773692371904_qcbi", "nombre": "CESPEDES RODRIGUEZ ITALO ALEJANDRO", "t": 10, "p": 15}, {"id": "e_1773692371904_aox8", "nombre": "CORIA LAFUENTE MATEO", "t": 5, "p": 1}, {"id": "e_1773692371904_8n6p", "nombre": "ESPER EYSI ANTONIO"}, {"id": "e_1773692371904_8to3", "nombre": "GUTIERREZ PADILLA SHAX MIDAEL", "t": 10, "p": 15}, {"id": "e_1773692371904_q56e", "nombre": "HEREDIA SAUCEDO ABRIL JOHARA", "t": 9, "p": 15}, {"id": "e_1773692371904_inp9", "nombre": "MAMANI TOLEDO JHANDY", "t": 6, "p": 2}, {"id": "e_1773692371904_89j1", "nombre": "MERCADO GARCIA DANNY SAORI", "t": 9, "p": 10}, {"id": "e_1773692371904_a04q", "nombre": "NIEVES ZAMBRANA MANUEL", "t": 6, "p": 4}, {"id": "e_1773692371904_73pq", "nombre": "PARDO MOSCO RACHEL EILEEN"}, {"id": "e_1773692371904_6t41", "nombre": "PAYE CACERES NEYMAR SANTIGO", "t": 9, "p": 9}, {"id": "e_1773692371904_6jg3", "nombre": "PIZARRO QUIROZ JUAN JUVENAL", "t": 5, "p": 6}, {"id": "e_1773692371904_abjm", "nombre": "QUISPE SALAZAR EUNIS MIKEYLA", "t": 6, "p": 15}, {"id": "e_1773692371904_pecz", "nombre": "ROCABADO FLORES JAFET UZIEL"}, {"id": "e_1773692371904_sw7n", "nombre": "RODRIGUEZ VARGAS ALEXIA PRIYANCA", "t": 6, "p": 7}, {"id": "e_1773692371904_n0rz", "nombre": "TAPIA MENDOZA LUCIANA NICOL", "t": 10, "p": 15}], "2do Secundaria": [{"id": "e_1773692371904_wa7v", "nombre": "ADRIAN ACOSTA BIEL GUNAR", "t": 10, "p": 15}, {"id": "e_1773692371904_mgf5", "nombre": "ARCE HACHES SEBASTIAN JHOAB", "t": 8, "p": 9}, {"id": "e_1773692371904_ojbs", "nombre": "BLANCO AVALOS JAZLYN KATRYNA", "t": 7, "p": 3}, {"id": "e_1773692371904_j2vu", "nombre": "BORDA FLORES JOSE ENRRIQUE", "t": 5, "p": 1}, {"id": "e_1773692371904_oal3", "nombre": "CARACILA RAMOS HYRUM UZZIEL", "t": 10, "p": 15}, {"id": "e_1773692371904_f3sw", "nombre": "CARDONA ARCE LUZ ALBA", "t": 6, "p": 15}, {"id": "e_1773692371904_4hqm", "nombre": "CATARI PEREZ SAMIRA", "t": 10, "p": 13}, {"id": "e_1773692371904_ifod", "nombre": "CONDORI APAZA HECTOR CALEB", "t": 9, "p": 12}, {"id": "e_1773692371904_fm80", "nombre": "GARCIA SERRANO MISAEL"}, {"id": "e_1773692371904_ib20", "nombre": "HARDING HARDING CRYSTAL HADASA", "t": 4, "p": 1}, {"id": "e_1773692371904_8e6y", "nombre": "HERBAS ARIAS JESUS ANGEL", "t": 9, "p": 12}, {"id": "e_1773692371904_vh7g", "nombre": "MENDEZ AGUIRRE ASHLEY MELANI", "t": 8, "p": 8}, {"id": "e_1773692371904_roks", "nombre": "MUÑOZ ROCHA MELINA ISABEL", "t": 10, "p": 4}, {"id": "e_1773692371904_d7o6", "nombre": "QUECA QUIÑONEZ KAREN VIUVANA", "t": 10, "p": 14}, {"id": "e_1773692371904_2zrk", "nombre": "QUISPE PACO MATIAS ALEXANDER"}, {"id": "e_1773692371904_imta", "nombre": "RODRIGUEZ QUISPE ALEXANDER SANTIAGO"}, {"id": "e_1773692371904_fpfm", "nombre": "RONCAL CATELLON NINON", "t": 8, "p": 15}, {"id": "e_1773692371904_18q2", "nombre": "SOLIZ MENDIETA LUIS DANIEL"}, {"id": "e_1773692371904_n3xw", "nombre": "TERAN RAMAYO RONALD ANDRES", "t": 8, "p": 7}, {"id": "e_1773692371904_d4ql", "nombre": "VILLARROEL DIAZ LUCIANA VICTORIA", "t": 4, "p": 6}, {"id": "e_1773692371904_j4d8", "nombre": "VILLARROEL GUARDIA JESUS MANUEL"}], "3ro Secundaria": [{"id": "e_1773692371904_3t94", "nombre": "ACAPA VALDEZ BRAYAN", "t": 6, "p": 7}, {"id": "e_1773692371904_jcub", "nombre": "AGREDA AMURRIO ANTONIO", "t": 8, "p": 1}, {"id": "e_1773692371904_a41z", "nombre": "ALIAGA PADILLA KEVIN JHEICOB", "t": 10, "p": 1}, {"id": "e_1773692371904_1l6t", "nombre": "ANDRADE CADENA JHASSMIN NAHOMI", "t": 2, "p": 1}, {"id": "e_1773692371904_t83z", "nombre": "APAZA CADIMA JOEL GONZALO", "t": 4, "p": 2}, {"id": "e_1773692371904_7oxg", "nombre": "BELTRAN JERIA VALENTINA"}, {"id": "e_1773692371904_qdqy", "nombre": "COLQUE LIZARAZU GABRIEL FELIX", "t": 5, "p": 5}, {"id": "e_1773692371904_7viy", "nombre": "CORIA LAFUENTE XAVI", "t": 3, "p": 2}, {"id": "e_1773692371904_8p77", "nombre": "CORTEZ GARCIA AYSEL GRECIA", "t": 10, "p": 10}, {"id": "e_1773692371904_6qeg", "nombre": "CUENCA MARCA YAHIDY VIANNETH", "t": 10, "p": 7}, {"id": "e_1773692371904_fhv7", "nombre": "FLORES CARRASCO GERALDINE ALIZON", "t": 5, "p": 3}, {"id": "e_1773692371904_bwfp", "nombre": "GOMEZ SALAZAR MARIEL ALEJANDRA", "t": 8, "p": 8}, {"id": "e_1773692371904_rnxn", "nombre": "HARDING HARDING BENJAMIN LEE", "t": 10, "p": 9}, {"id": "e_1773692371904_hsru", "nombre": "MEDINA TABORGA RAFAELLA"}, {"id": "e_1773692371904_j1p2", "nombre": "MORALES BUSTAMANTE ANAHI ROSARIO", "t": 8, "p": 9}, {"id": "e_1773692371904_o5f6", "nombre": "ORTIZ QUISPE RODRIGO ALBERTO"}, {"id": "e_1773692371904_w5uo", "nombre": "PARDO CAMARA VALENTINA", "t": 8, "p": 9}, {"id": "e_1773692371904_ppgq", "nombre": "PECHO ALVAREZ JESUS SANTIAGO", "t": 4, "p": 8}, {"id": "e_1773692371904_s6xo", "nombre": "PEREZ ZENTENO ANELY BRISEYDA", "t": 9, "p": 4}, {"id": "e_1773692371904_1orb", "nombre": "RODRIGUEZ GARCIA JHEFERSON MATIAS", "t": 8, "p": 13}, {"id": "e_1773692371904_xmmb", "nombre": "ROMERO MAYGUA ISAAC", "t": 7, "p": 8}, {"id": "e_1773692371904_2ujh", "nombre": "SANCHEZ BALTAZAR CHRISTIAN ANDRES", "t": 8, "p": 10}, {"id": "e_1773692371904_egjw", "nombre": "SANJINEZ QUISPE AMANDA", "t": 10, "p": 13}, {"id": "e_1773692371904_njuf", "nombre": "TORRICO LOPEZ FABIO", "t": 5, "p": 2}, {"id": "e_1773692371904_966e", "nombre": "URIBE VELARDE ISABELLA", "t": 7, "p": 2}, {"id": "e_1773692371904_j0nd", "nombre": "URIZAR MADRID TIMOTHY", "t": 5, "p": 1}, {"id": "e_1773692371904_2jaf", "nombre": "ZURITA TREVIÑO GRIS AINOHA", "t": 6, "p": 4}, {"id": "e_1773709601256_ulug", "nombre": "PATIÑO CHAVEZ DILAN", "t": 7, "p": 6}], "4to Secundaria": [{"id": "e_1773692371905_jjhf", "nombre": "ACOSTA ADRIAN VASNI ARISAY"}, {"id": "e_1773692371905_0zlc", "nombre": "AREVALO BALANCA ANTONY FAVIAN"}, {"id": "e_1773692371905_tzih", "nombre": "AYALA ALVAREZ JOAN ANDREU"}, {"id": "e_1773692371905_dr1z", "nombre": "BALDERRAMA MEDRANO LUCAS NOEL"}, {"id": "e_1773692371905_qdk4", "nombre": "BAPTISTA SOLANO JHACK DEYVID"}, {"id": "e_1773692371905_2903", "nombre": "BERRIOS RODRIGUEZ JOSE ALEJANDRO"}, {"id": "e_1773692371905_qluu", "nombre": "CANEDO PEÑALOZA CRISVEL BRICEIDA"}, {"id": "e_1773692371905_pe46", "nombre": "CANIZARES ENRIQUEZ JOHN ERICK"}, {"id": "e_1773692371905_gl6f", "nombre": "CORIA MAYTE LUCIANA"}, {"id": "e_1773692371905_hgb2", "nombre": "ESPINOZA HUANCA THAIS MELANY"}, {"id": "e_1773692371905_fu4n", "nombre": "EYZAGUIRRE EAMARA WENDY"}, {"id": "e_1773692371905_507m", "nombre": "FLORES LAFUENTE ERWIN DAVID"}, {"id": "e_1773692371905_g8be", "nombre": "LAVADO LOPEZ ISABEL SDENKA"}, {"id": "e_1773692371905_bzrf", "nombre": "MEDRANO SORIA MISAEL JESUS"}, {"id": "e_1773692371905_al1q", "nombre": "MEJIA FELIPEZ ALEJANDRO"}, {"id": "e_1773692371905_6es9", "nombre": "MENDEZ AGUIRRE ALDRIN ALEJANDRO"}, {"id": "e_1773692371905_4wso", "nombre": "MENDIETA GARCIA ANDRE SIMON"}, {"id": "e_1773692371905_87t8", "nombre": "PAYE CACERES JHENNIFER NICOLE"}, {"id": "e_1773692371905_pi37", "nombre": "PEREZ CONDORI IAN RODRIGO"}, {"id": "e_1773692371905_ns8q", "nombre": "PILCO CRUZ ELIENAI ABIGAIL"}, {"id": "e_1773692371905_gjh7", "nombre": "RAMOS QUIROZ ANDREA FERNANDA"}, {"id": "e_1773692371905_ip6y", "nombre": "SAAVEDRA SERRANO BRETT ANDRE"}, {"id": "e_1773692371905_srfm", "nombre": "TIBUBAY AYALA LEONEL"}, {"id": "e_1773692371905_x6dk", "nombre": "TORO MIQUI RONALD CRISTIAN"}, {"id": "e_1773692371905_pewt", "nombre": "VELA CANAVIRI NATALIA ANNEL"}, {"id": "e_1773692371905_dndp", "nombre": "VELASQUEZ GARCES JHENELY"}, {"id": "e_1773692371905_3fvh", "nombre": "VISCARRA PAZ LEANDRO"}, {"id": "e_1773692371905_kx5v", "nombre": "ZABALA MARQUEZ SILVIA JESSICA"}], "5to Secundaria": [{"id": "e_1773692371905_cxad", "nombre": "ADRIAN MACHICADO HANZ"}, {"id": "e_1773692371905_omij", "nombre": "ANGULO AGUILAR JHAIR"}, {"id": "e_1773692371905_p3ah", "nombre": "CALLISAYA PEREZ ERICK RAFAEL"}, {"id": "e_1773692371905_ok1v", "nombre": "CARACILA RAMOS ANELISSE"}, {"id": "e_1773692371905_55bt", "nombre": "CHOQUE TUCO JESUS LEONEL"}, {"id": "e_1773692371905_bncw", "nombre": "CORIA LAFUENTE JHOSUE ALEJANDRO"}, {"id": "e_1773692371905_c0qz", "nombre": "FUENTES CRISPIN NEYTAN"}, {"id": "e_1773692371905_b405", "nombre": "GOMEZ VELA MARIA JOSE"}, {"id": "e_1773692371905_ofi0", "nombre": "GREGORIO MURUCHI JOSE ALEJANDRO"}, {"id": "e_1773692371905_tp1m", "nombre": "HARDING HARDING ENOC BRYAN"}, {"id": "e_1773692371905_d2th", "nombre": "HURTADO POCOMANI DEREK SANTIAGO"}, {"id": "e_1773692371905_xg6z", "nombre": "LEDEZMA LAIME KALED SANTIAGO"}, {"id": "e_1773692371905_0re1", "nombre": "LIMA VELEZ MAHELY"}, {"id": "e_1773692371905_kqq5", "nombre": "LOVERA JIMENEZ MAXWUELL DIEGO"}, {"id": "e_1773692371905_vg97", "nombre": "MEDRANO SORIA ISAEL JHONATAN"}, {"id": "e_1773692371905_zqz7", "nombre": "MONTOYA RAMOS ARELIS GENESIS"}, {"id": "e_1773692371905_wujv", "nombre": "PEREZ ALCON PAOLO ALESANDRO"}, {"id": "e_1773692371905_dxja", "nombre": "PLAZA MERCADO HUGO FRANCISCO"}, {"id": "e_1773692371905_brjo", "nombre": "QUIROZ QUINTANA DUSAN DEYVI"}, {"id": "e_1773692371905_kchx", "nombre": "QUISPE CHALLCO NAYLA JAZMIN"}, {"id": "e_1773692371905_3aq0", "nombre": "QUISPE SALAZAR VIVIAN MICAELA"}, {"id": "e_1773692371905_h6ik", "nombre": "REYEZ TORREZ KALEP ALEXANDER"}, {"id": "e_1773692371905_397c", "nombre": "RIOS FLORES JUAN JOEL"}, {"id": "e_1773692371905_979i", "nombre": "ROJAS MERCADO ESTEFANY NICOL"}, {"id": "e_1773692371905_uzcg", "nombre": "ROJAS MERCADO MARCELA ROXANA"}, {"id": "e_1773692371905_1s38", "nombre": "ROMERO NAVA VALERIA SARAHI"}, {"id": "e_1773692371905_2ql6", "nombre": "TIRADO MARTINEZ LUCIANA"}, {"id": "e_1773692371905_b2fv", "nombre": "VARGAS AVILA MATIAS SAMUEL"}, {"id": "e_1773692371905_4jl3", "nombre": "VARGAS ROCA MARGOTH"}], "6to Secundaria": [{"id": "e_1773692371905_u05y", "nombre": "ACHA VILLARROEL BEYMAR"}, {"id": "e_1773692371905_mgo2", "nombre": "AMADO CABEZAS RAFAELA BELEN"}, {"id": "e_1773692371905_a21u", "nombre": "CALDERON ROJAS JOSE ANDRES"}, {"id": "e_1773692371905_wtcg", "nombre": "CASTELLON ZELAYA PATRICIA"}, {"id": "e_1773692371905_9up7", "nombre": "CORDERO MOYA ANGELY MARTHA"}, {"id": "e_1773692371905_nxxi", "nombre": "FLORES MAMANI KATERIN BELEN"}, {"id": "e_1773692371905_tqg3", "nombre": "GLADE CASTELLON SALVADOR"}, {"id": "e_1773692371905_2264", "nombre": "GOMEZ VELA MELANY YESICA"}, {"id": "e_1773692371905_p11l", "nombre": "MALDONADO ALMANZA IVAN"}, {"id": "e_1773692371905_dvty", "nombre": "MENDEZ AGUIRRE ANDRU ARIEL"}, {"id": "e_1773692371905_odbt", "nombre": "NOGALES QUIROZ KEYTI ISABEL"}, {"id": "e_1773692371905_zi9l", "nombre": "OVANDO VELEZ NEL"}, {"id": "e_1773692371905_33q7", "nombre": "PAYE CACERES LUIS ANGEL"}, {"id": "e_1773692371905_77no", "nombre": "PERALTA ARTEAGA AMBEIRON JUAN"}, {"id": "e_1773692371905_b5rd", "nombre": "PEREZ LLANOS SAMUEL ESTEBAN"}, {"id": "e_1773692371905_jkhd", "nombre": "PIZARRO QUIROZ PAOLA FANNY"}, {"id": "e_1773692371905_ehbo", "nombre": "VALLEJOS PEREZ JHERSON"}, {"id": "e_1773692371905_5rh2", "nombre": "ZEBALLOS PADILLA ORIANA"}]}};
       // ensure all courses exist
       CURSOS.forEach(c=>{if(!db.cursos[c])db.cursos[c]=[]});
       sdb();
@@ -515,13 +526,13 @@ async function initDb(){
 
 function showLoading(on){
   let el=document.getElementById('fb-loading');
-  if(!el){el=document.createElement('div');el.id='fb-loading';el.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(26,26,46,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;font-family:"DM Sans",sans-serif;gap:1rem';el.innerHTML='<div style="font-size:2.5rem">ðŸ”„</div><div style="font-size:1.1rem;font-weight:600">Cargando datosâ€¦</div><div style="font-size:.8rem;opacity:.6">Conectando con Firebase</div>';document.body.appendChild(el);}
+  if(!el){el=document.createElement('div');el.id='fb-loading';el.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(26,26,46,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;font-family:"DM Sans",sans-serif;gap:1rem';el.innerHTML='<div style="font-size:2.5rem">🔄</div><div style="font-size:1.1rem;font-weight:600">Cargando datos…</div><div style="font-size:.8rem;opacity:.6">Conectando con Firebase</div>';document.body.appendChild(el);}
   el.style.display=on?'flex':'none';
 }
 
 function mk(){return'e_'+Date.now()+'_'+Math.random().toString(36).slice(2,6)}
 
-// â”€â”€ LOGIN â”€â”€
+// ── LOGIN ──
 async function doLogin(){
   const u=document.getElementById('l-user').value.trim().toLowerCase();
   const p=document.getElementById('l-pass').value;
@@ -532,7 +543,7 @@ async function doLogin(){
   await initDb();
   document.getElementById('login-screen').style.display='none';
   document.getElementById('app-screen').style.display='block';
-  document.getElementById('user-chip').textContent='ðŸ‘¤ '+u;
+  document.getElementById('user-chip').textContent='👤 '+u;
   document.getElementById('l-user').value='';
   document.getElementById('l-pass').value='';
   cur=null;
@@ -543,29 +554,29 @@ function doLogout(){
   loggedUser=null;db=null;cur=null;
   document.getElementById('app-screen').style.display='none';
   document.getElementById('login-screen').style.display='flex';
-  document.getElementById('hc').textContent='â€”';
+  document.getElementById('hc').textContent='—';
 }
 
-// â”€â”€ USER MANAGEMENT â”€â”€
+// ── USER MANAGEMENT ──
 function createUser(){
   const u=document.getElementById('nu-user').value.trim().toLowerCase();
   const p=document.getElementById('nu-pass').value;
   const msg=document.getElementById('nu-msg');
-  if(!u||u.length<2){msg.style.color='var(--accent)';msg.textContent='âš  Nombre muy corto';return}
-  if(users[u]){msg.style.color='var(--accent)';msg.textContent='âš  Ya existe ese usuario';return}
-  if(!p||p.length<4){msg.style.color='var(--accent)';msg.textContent='âš  ContraseÃ±a mÃ­nimo 4 caracteres';return}
+  if(!u||u.length<2){msg.style.color='var(--accent)';msg.textContent='⚠ Nombre muy corto';return}
+  if(users[u]){msg.style.color='var(--accent)';msg.textContent='⚠ Ya existe ese usuario';return}
+  if(!p||p.length<4){msg.style.color='var(--accent)';msg.textContent='⚠ Contraseña mínimo 4 caracteres';return}
   users[u]={pass:p,created:Date.now()};
   saveUsers(users);
   document.getElementById('nu-user').value='';
   document.getElementById('nu-pass').value='';
-  msg.style.color='var(--green)';msg.textContent='âœ… Usuario "'+u+'" creado';
+  msg.style.color='var(--green)';msg.textContent='✅ Usuario "'+u+'" creado';
   renderUsers();
   setTimeout(()=>msg.textContent='',3000);
 }
 
 function deleteUser(u){
   if(u===loggedUser){toast('No puedes eliminar tu propio usuario');return}
-  if(!confirm('Â¿Eliminar usuario "'+u+'" y todos sus datos?'))return;
+  if(!confirm('¿Eliminar usuario "'+u+'" y todos sus datos?'))return;
   delete users[u];
   saveUsers(users);
   renderUsers();
@@ -581,56 +592,56 @@ function renderUsers(){
     row.className='user-row';
     const isMe=u===loggedUser;
     row.innerHTML=`<div class="user-avatar">${u[0].toUpperCase()}</div>
-      <div><div class="user-name">${u}${isMe?' <span style="color:var(--teal);font-size:.72rem">(tÃº)</span>':''}</div>
-      <div class="user-role">${isMe?'SesiÃ³n activa':'Usuario registrado'}</div></div>
+      <div><div class="user-name">${u}${isMe?' <span style="color:var(--teal);font-size:.72rem">(tú)</span>':''}</div>
+      <div class="user-role">${isMe?'Sesión activa':'Usuario registrado'}</div></div>
       <div class="user-actions">${!isMe?`<button class="btn bdanger" onclick="deleteUser('${u}')">Eliminar</button>`:''}</div>`;
     list.appendChild(row);
   });
 }
 
-// â”€â”€ EXPORT / IMPORT â”€â”€
-// â”€â”€ TÃTULO EDITABLE â”€â”€
+// ── EXPORT / IMPORT ──
+// ── TÍTULO EDITABLE ──
 const TITULO_KEY='cal_titulo_v1';
 function getTitulo(){return localStorage.getItem(TITULO_KEY)||'Calificaciones'}
 function setTitulo(t){localStorage.setItem(TITULO_KEY,t)}
 function applyTitulo(){
   const t=getTitulo();
   document.getElementById('app-title').textContent=t;
-  document.title=t+' â€” Sistema';
+  document.title=t+' — Sistema';
   const inp=document.getElementById('inp-titulo');
   if(inp)inp.value=t;
   const sub=document.getElementById('login-sub-text');
-  if(sub)sub.textContent=t+' â€” Inicia sesiÃ³n para continuar';
+  if(sub)sub.textContent=t+' — Inicia sesión para continuar';
   const ltit=document.getElementById('login-title-text');
   if(ltit)ltit.textContent=t;
 }
 function guardarTitulo(){
   const v=document.getElementById('inp-titulo').value.trim();
-  if(!v){document.getElementById('titulo-msg').style.color='var(--accent)';document.getElementById('titulo-msg').textContent='âš  Escribe un nombre';return;}
+  if(!v){document.getElementById('titulo-msg').style.color='var(--accent)';document.getElementById('titulo-msg').textContent='⚠ Escribe un nombre';return;}
   setTitulo(v);applyTitulo();
   document.getElementById('titulo-msg').style.color='var(--green)';
-  document.getElementById('titulo-msg').textContent='âœ… TÃ­tulo actualizado';
+  document.getElementById('titulo-msg').textContent='✅ Título actualizado';
   setTimeout(()=>document.getElementById('titulo-msg').textContent='',2500);
 }
 
-// â”€â”€ LIMPIAR DATOS â”€â”€
+// ── LIMPIAR DATOS ──
 function limpiarCalificaciones(){
   exportData();
   setTimeout(()=>{
-    if(!confirm('Â¿Seguro que quieres borrar TODAS las notas?\n\nSe ha descargado un respaldo. Los nombres se mantienen pero las notas se eliminarÃ¡n.')){return;}
+    if(!confirm('¿Seguro que quieres borrar TODAS las notas?\n\nSe ha descargado un respaldo. Los nombres se mantienen pero las notas se eliminarán.')){return;}
     CURSOS.forEach(c=>{db.cursos[c].forEach(e=>{delete e.t;delete e.p;});});
     sdb();cur=null;ST('tc');RG();RP();
-    toast('ðŸ—‘ï¸ Notas borradas. Respaldo descargado.');
+    toast('🗑️ Notas borradas. Respaldo descargado.');
   },600);
 }
 function limpiarTodo(){
   exportData();
   setTimeout(()=>{
-    if(!confirm('Â¿Seguro que quieres borrar TODO?\n\nSe ha descargado un respaldo. Se eliminarÃ¡n notas y estudiantes agregados manualmente, volviendo a la lista original.')){return;}
+    if(!confirm('¿Seguro que quieres borrar TODO?\n\nSe ha descargado un respaldo. Se eliminarán notas y estudiantes agregados manualmente, volviendo a la lista original.')){return;}
     db={cursos:{}};
     CURSOS.forEach(c=>{db.cursos[c]=ID[c].map(n=>({id:mk(),nombre:n,t:undefined,p:undefined}));});
     sdb();cur=null;ST('tc');RG();RP();
-    toast('ðŸ’£ Datos restablecidos. Respaldo descargado.');
+    toast('💣 Datos restablecidos. Respaldo descargado.');
   },600);
 }
 
@@ -643,7 +654,7 @@ function exportData(){
   a.download='calificaciones_'+loggedUser+'_'+new Date().toISOString().slice(0,10)+'.json';
   a.click();
   URL.revokeObjectURL(url);
-  toast('âœ… Datos exportados');
+  toast('✅ Datos exportados');
 }
 
 function importData(input){
@@ -652,22 +663,22 @@ function importData(input){
   reader.onload=e=>{
     try{
       const payload=JSON.parse(e.target.result);
-      if(!payload.data||!payload.data.cursos)throw new Error('Formato invÃ¡lido');
-      if(!confirm('Â¿Importar datos? Esto reemplazarÃ¡ tus calificaciones actuales.'))return;
+      if(!payload.data||!payload.data.cursos)throw new Error('Formato inválido');
+      if(!confirm('¿Importar datos? Esto reemplazará tus calificaciones actuales.'))return;
       db=payload.data;
       CURSOS.forEach(c=>{if(!db.cursos[c])db.cursos[c]=[]});
       sdb();cur=null;
       ST('tc');RG();RP();
-      toast('âœ… Datos importados correctamente');
-    }catch(err){toast('âŒ Error: archivo invÃ¡lido');}
+      toast('✅ Datos importados correctamente');
+    }catch(err){toast('❌ Error: archivo inválido');}
     input.value='';
   };
   reader.readAsText(file);
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 // APP LOGIC
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 function isPrimaria(c){return PRIM.includes(c||cur)}
 function maxPFor(c){return isPrimaria(c)?10:15}
 function maxP(){return maxPFor(cur)}
@@ -694,21 +705,21 @@ function RG(){
     const b=document.createElement('button');
     let cls='course-btn';if(c===cur)cls+=' sel';if(done)cls+=' done';
     b.className=cls;
-    const pendHTML=done?`<div class="done-badge">âœ” Completo</div>`:`<div class="pending-badge">${pend} sin calificar</div>`;
-    b.innerHTML=`${done?'<div class="done-crown">âœ“</div>':''}<strong>${c}</strong><div style="opacity:.7;font-size:.72rem;margin-top:.18rem">${n} estudiante${n!==1?'s':''}</div><div style="margin-top:.18rem">${pendHTML}</div>`;
+    const pendHTML=done?`<div class="done-badge">✔ Completo</div>`:`<div class="pending-badge">${pend} sin calificar</div>`;
+    b.innerHTML=`${done?'<div class="done-crown">✓</div>':''}<strong>${c}</strong><div style="opacity:.7;font-size:.72rem;margin-top:.18rem">${n} estudiante${n!==1?'s':''}</div><div style="margin-top:.18rem">${pendHTML}</div>`;
     b.onclick=()=>SC(c);g.appendChild(b);
   });
 }
 
 function SC(c){
   cur=c;document.getElementById('hc').textContent=c;
-  RG();RC();RE();RI();RR();RP();toast('ðŸ“‚ '+c);updatePLabel();
+  RG();RC();RE();RI();RR();RP();toast('📂 '+c);updatePLabel();
 }
 
 function updatePLabel(){
   const m=maxP();
-  const inp=document.getElementById('ip');if(inp){inp.max=m;inp.placeholder='0â€“'+m;}
-  const lbl=document.getElementById('ip-lbl');if(lbl)lbl.textContent='(de '+m+' â€” 60 pts)';
+  const inp=document.getElementById('ip');if(inp){inp.max=m;inp.placeholder='0–'+m;}
+  const lbl=document.getElementById('ip-lbl');if(lbl)lbl.textContent='(de '+m+' — 60 pts)';
   const em=document.getElementById('ip-err-max');if(em)em.textContent=m;
   const qmax=document.getElementById('qtb-max-p');if(qmax)qmax.textContent=m;
 }
@@ -725,8 +736,8 @@ function CN(){
   const nt=nT(t),np=nP(p,maxP()),tot=nt+np;
   document.getElementById('rb').style.display='flex';
   document.getElementById('rs').textContent=tot.toFixed(1);
-  document.getElementById('rt').textContent=`TeÃ³rica: ${t}/10 = ${nt.toFixed(1)} pts`;
-  document.getElementById('rp').textContent=`PrÃ¡ctica: ${p}/${maxP()} = ${np.toFixed(1)} pts`;
+  document.getElementById('rt').textContent=`Teórica: ${t}/10 = ${nt.toFixed(1)} pts`;
+  document.getElementById('rp').textContent=`Práctica: ${p}/${maxP()} = ${np.toFixed(1)} pts`;
   document.getElementById('rto').textContent=`Total: ${tot.toFixed(1)}/100`;
 }
 
@@ -737,17 +748,17 @@ function GN(){
   if(isNaN(t)||isNaN(p))return alert('Ingresa las preguntas correctas.');
   t=Math.min(10,Math.max(0,t));p=Math.min(maxP(),Math.max(0,p));
   const e=db.cursos[cur].find(x=>x.id===eid);
-  if(e){e.t=t;e.p=p;sdb();document.getElementById('it').value='';document.getElementById('ip').value='';document.getElementById('rb').style.display='none';document.getElementById('se').value='';RE();RC();RR();RG();RP();toast('âœ… '+e.nombre)}
+  if(e){e.t=t;e.p=p;sdb();document.getElementById('it').value='';document.getElementById('ip').value='';document.getElementById('rb').style.display='none';document.getElementById('se').value='';RE();RC();RR();RG();RP();toast('✅ '+e.nombre)}
 }
 
 function RC(){
   const ok=!!cur;document.getElementById('nq').style.display=ok?'none':'block';document.getElementById('qc').style.display=ok?'block':'none';
   if(!ok)return;document.getElementById('qb').textContent=cur;updatePLabel();
   const pend=pendientes(cur);const sel=document.getElementById('se');
-  sel.innerHTML='<option value="">â€” Seleccionar â€”</option>';
+  sel.innerHTML='<option value="">— Seleccionar —</option>';
   pend.forEach(e=>{const o=document.createElement('option');o.value=e.id;o.textContent=e.nombre;sel.appendChild(o)});
   const lbl=document.getElementById('pending-count-lbl');
-  if(lbl)lbl.textContent=pend.length>0?`(${pend.length} pendiente${pend.length!==1?'s':''})`:' âœ” todos calificados';
+  if(lbl)lbl.textContent=pend.length>0?`(${pend.length} pendiente${pend.length!==1?'s':''})`:' ✔ todos calificados';
   RQ();
 }
 
@@ -757,16 +768,16 @@ function RQ(){
   const ungraded=(db.cursos[cur]||[]).filter(e=>!isCalificado(e));
   if(uc)uc.textContent=ungraded.length;
   const all=db.cursos[cur]||[];
-  if(!all.length){tb.innerHTML='<tr><td colspan="6"><div class="empty"><div class="ei">ðŸŽ’</div>Sin estudiantes</div></td></tr>';return}
+  if(!all.length){tb.innerHTML='<tr><td colspan="6"><div class="empty"><div class="ei">🎒</div>Sin estudiantes</div></td></tr>';return}
   tb.innerHTML='';
   all.forEach((e,i)=>{
     const nt=e.t!==undefined?nT(e.t):null,np=e.p!==undefined?nP(e.p):null,tot=nt!==null&&np!==null?nt+np:null;
     const pill=tot!==null?`<span class="gp ${gc(tot)}">${tot.toFixed(1)}</span>`:'<span class="gp gna">Pendiente</span>';
     const tr=document.createElement('tr');
     tr.innerHTML=`<td style="color:var(--muted);font-size:.76rem">${i+1}</td><td><strong>${e.nombre}</strong></td>
-      <td><input class="mi" type="number" min="0" max="10" value="${e.t!==undefined?e.t:''}" placeholder="â€”" inputmode="numeric" onchange="QS('${e.id}','t',this.value)"></td>
-      <td><input class="mi" type="number" min="0" max="${maxP()}" value="${e.p!==undefined?e.p:''}" placeholder="â€”" inputmode="numeric" onchange="QS('${e.id}','p',this.value)"></td>
-      <td>${pill}</td><td><button class="btn bd" onclick="DE('${e.id}')">âœ•</button></td>`;
+      <td><input class="mi" type="number" min="0" max="10" value="${e.t!==undefined?e.t:''}" placeholder="—" inputmode="numeric" onchange="QS('${e.id}','t',this.value)"></td>
+      <td><input class="mi" type="number" min="0" max="${maxP()}" value="${e.p!==undefined?e.p:''}" placeholder="—" inputmode="numeric" onchange="QS('${e.id}','p',this.value)"></td>
+      <td>${pill}</td><td><button class="btn bd" onclick="DE('${e.id}')">✕</button></td>`;
     tb.appendChild(tr);
   });
 }
@@ -784,7 +795,7 @@ function AE(){
 }
 
 function DE(id){
-  if(!confirm('Â¿Eliminar?'))return;
+  if(!confirm('¿Eliminar?'))return;
   db.cursos[cur]=db.cursos[cur].filter(e=>e.id!==id);sdb();RE();RG();RC();RR();RP();
 }
 
@@ -793,17 +804,17 @@ function RE(){
   if(!ok)return;document.getElementById('eb').textContent=cur;
   const q=(document.getElementById('qs').value||'').toLowerCase(),all=db.cursos[cur],sts=all.filter(e=>e.nombre.toLowerCase().includes(q));
   const cal=all.filter(isCalificado),notas=cal.map(e=>nT(e.t)+nP(e.p));
-  const prom=notas.length?(notas.reduce((a,b)=>a+b,0)/notas.length).toFixed(1):'â€”';
+  const prom=notas.length?(notas.reduce((a,b)=>a+b,0)/notas.length).toFixed(1):'—';
   const apro=notas.filter(n=>n>=51).length;
   document.getElementById('str').innerHTML=`<div class="sc"><div class="sn">${all.length}</div><div class="sl">Total</div></div><div class="sc"><div class="sn">${cal.length}</div><div class="sl">Calificados</div></div><div class="sc"><div class="sn" style="color:var(--accent)">${all.length-cal.length}</div><div class="sl">Pendientes</div></div><div class="sc"><div class="sn" style="color:var(--teal)">${apro}</div><div class="sl">Aprobados</div></div><div class="sc"><div class="sn" style="color:var(--gold)">${prom}</div><div class="sl">Promedio</div></div>`;
   const tb=document.getElementById('etb');
-  if(!sts.length){tb.innerHTML=`<tr><td colspan="6"><div class="empty"><div class="ei">ðŸŽ’</div>${q?'Sin resultados':'Sin estudiantes'}</div></td></tr>`;return}
+  if(!sts.length){tb.innerHTML=`<tr><td colspan="6"><div class="empty"><div class="ei">🎒</div>${q?'Sin resultados':'Sin estudiantes'}</div></td></tr>`;return}
   tb.innerHTML='';
   sts.forEach((e,i)=>{
     const nt=e.t!==undefined?nT(e.t):null,np=e.p!==undefined?nP(e.p):null,tot=nt!==null&&np!==null?nt+np:null;
     const pill=tot!==null?`<span class="gp ${gc(tot)}">${tot.toFixed(1)}</span>`:'<span class="gp gna">Sin nota</span>';
     const tr=document.createElement('tr');const mx=maxP();
-    tr.innerHTML=`<td style="color:var(--muted);font-size:.76rem">${i+1}</td><td><strong>${e.nombre}</strong></td><td style="color:var(--muted)">${e.t!==undefined?e.t+'/10':'â€”'}</td><td style="color:var(--muted)">${e.p!==undefined?e.p+'/'+mx:'â€”'}</td><td>${pill}</td><td><button class="btn bd" onclick="DE('${e.id}')">âœ•</button></td>`;
+    tr.innerHTML=`<td style="color:var(--muted);font-size:.76rem">${i+1}</td><td><strong>${e.nombre}</strong></td><td style="color:var(--muted)">${e.t!==undefined?e.t+'/10':'—'}</td><td style="color:var(--muted)">${e.p!==undefined?e.p+'/'+mx:'—'}</td><td>${pill}</td><td><button class="btn bd" onclick="DE('${e.id}')">✕</button></td>`;
     tb.appendChild(tr);
   });
 }
@@ -818,7 +829,7 @@ function IMP(){
   const lines=document.getElementById('ita').value.split('\n').map(l=>l.trim()).filter(l=>l);let a=0;
   lines.forEach(n=>{if(!db.cursos[cur].some(e=>e.nombre.toLowerCase()===n.toLowerCase())){db.cursos[cur].push({id:mk(),nombre:n,t:undefined,p:undefined});a++;}});
   sdb();RG();RC();RE();RR();RP();
-  document.getElementById('ir').textContent=`âœ… ${a} agregado(s), ${lines.length-a} ignorado(s).`;
+  document.getElementById('ir').textContent=`✅ ${a} agregado(s), ${lines.length-a} ignorado(s).`;
   if(a>0)document.getElementById('ita').value='';
 }
 
@@ -827,17 +838,17 @@ function RR(){
   if(!ok)return;document.getElementById('rb2').textContent=cur;
   const sts=db.cursos[cur],mx=maxP();
   const notas=sts.filter(isCalificado).map(e=>nT(e.t)+nP(e.p));
-  const prom=notas.length?(notas.reduce((a,b)=>a+b,0)/notas.length).toFixed(1):'â€”';
-  const mxN=notas.length?Math.max(...notas).toFixed(1):'â€”',mnN=notas.length?Math.min(...notas).toFixed(1):'â€”';
+  const prom=notas.length?(notas.reduce((a,b)=>a+b,0)/notas.length).toFixed(1):'—';
+  const mxN=notas.length?Math.max(...notas).toFixed(1):'—',mnN=notas.length?Math.min(...notas).toFixed(1):'—';
   const apro=notas.filter(n=>n>=51).length,pend=sts.filter(e=>!isCalificado(e)).length;
-  document.getElementById('rsr').innerHTML=`<div class="sc"><div class="sn">${sts.length}</div><div class="sl">Total</div></div><div class="sc"><div class="sn" style="color:var(--gold)">${prom}</div><div class="sl">Promedio</div></div><div class="sc"><div class="sn" style="color:var(--teal)">${mxN}</div><div class="sl">MÃ¡s Alta</div></div><div class="sc"><div class="sn" style="color:var(--accent)">${mnN}</div><div class="sl">MÃ¡s Baja</div></div><div class="sc"><div class="sn" style="color:var(--teal)">${apro}</div><div class="sl">Aprobados</div></div><div class="sc"><div class="sn" style="color:var(--accent)">${notas.length-apro}</div><div class="sl">Reprobados</div></div><div class="sc"><div class="sn" style="color:var(--accent)">${pend}</div><div class="sl">Pendientes</div></div>`;
+  document.getElementById('rsr').innerHTML=`<div class="sc"><div class="sn">${sts.length}</div><div class="sl">Total</div></div><div class="sc"><div class="sn" style="color:var(--gold)">${prom}</div><div class="sl">Promedio</div></div><div class="sc"><div class="sn" style="color:var(--teal)">${mxN}</div><div class="sl">Más Alta</div></div><div class="sc"><div class="sn" style="color:var(--accent)">${mnN}</div><div class="sl">Más Baja</div></div><div class="sc"><div class="sn" style="color:var(--teal)">${apro}</div><div class="sl">Aprobados</div></div><div class="sc"><div class="sn" style="color:var(--accent)">${notas.length-apro}</div><div class="sl">Reprobados</div></div><div class="sc"><div class="sn" style="color:var(--accent)">${pend}</div><div class="sl">Pendientes</div></div>`;
   const tb=document.getElementById('rtb');tb.innerHTML='';
-  if(!sts.length){tb.innerHTML='<tr><td colspan="7"><div class="empty"><div class="ei">ðŸ“Š</div>Sin estudiantes</div></td></tr>';return}
+  if(!sts.length){tb.innerHTML='<tr><td colspan="7"><div class="empty"><div class="ei">📊</div>Sin estudiantes</div></td></tr>';return}
   [...sts].sort((a,b)=>a.nombre.localeCompare(b.nombre)).forEach((e,i)=>{
     const nt=e.t!==undefined?nT(e.t):null,np=e.p!==undefined?nP(e.p):null,tot=nt!==null&&np!==null?nt+np:null;
-    const pill=tot!==null?`<span class="gp ${gc(tot)}">${tot.toFixed(1)}</span>`:'<span class="gp gna">â€”</span>';
+    const pill=tot!==null?`<span class="gp ${gc(tot)}">${tot.toFixed(1)}</span>`:'<span class="gp gna">—</span>';
     const tr=document.createElement('tr');
-    tr.innerHTML=`<td style="color:var(--muted);font-size:.76rem">${i+1}</td><td><strong>${e.nombre}</strong></td><td style="text-align:center">${e.t!==undefined?e.t:'â€”'}</td><td style="text-align:center">${e.p!==undefined?e.p:'â€”'}</td><td style="text-align:center">${nt!==null?nt.toFixed(1):'â€”'}</td><td style="text-align:center">${np!==null?np.toFixed(1):'â€”'}</td><td style="text-align:center">${pill}</td>`;
+    tr.innerHTML=`<td style="color:var(--muted);font-size:.76rem">${i+1}</td><td><strong>${e.nombre}</strong></td><td style="text-align:center">${e.t!==undefined?e.t:'—'}</td><td style="text-align:center">${e.p!==undefined?e.p:'—'}</td><td style="text-align:center">${nt!==null?nt.toFixed(1):'—'}</td><td style="text-align:center">${np!==null?np.toFixed(1):'—'}</td><td style="text-align:center">${pill}</td>`;
     tb.appendChild(tr);
   });
 }
@@ -853,7 +864,7 @@ function RP(){
   noMsg.style.display='none';list.innerHTML='';
   cursosConPend.forEach(c=>{
     const pend=pendientes(c);const block=document.createElement('div');block.className='pend-curso-block';
-    block.innerHTML=`<div class="pend-curso-title"><span>ðŸ“š ${c}</span><span class="cnt">${pend.length} pendiente${pend.length!==1?'s':''}</span></div><div class="pend-names">${pend.map(e=>`<span class="pend-name">ðŸ‘¤ ${e.nombre}</span>`).join('')}</div>`;
+    block.innerHTML=`<div class="pend-curso-title"><span>📚 ${c}</span><span class="cnt">${pend.length} pendiente${pend.length!==1?'s':''}</span></div><div class="pend-names">${pend.map(e=>`<span class="pend-name">👤 ${e.nombre}</span>`).join('')}</div>`;
     list.appendChild(block);
   });
 }
@@ -861,16 +872,16 @@ function RP(){
 function PRT(){
   if(!cur)return;
   const mx=maxP();const sts=[...db.cursos[cur]].sort((a,b)=>a.nombre.localeCompare(b.nombre));
-  document.getElementById('ptit').textContent='Reporte â€” '+getTitulo()+' â€” '+cur;
+  document.getElementById('ptit').textContent='Reporte — '+getTitulo()+' — '+cur;
   const f=new Date().toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'numeric'});
-  document.getElementById('pfec').textContent=getTitulo()+' Â· 1er Trimestre Â· '+f;
+  document.getElementById('pfec').textContent=getTitulo()+' · 1er Trimestre · '+f;
   document.getElementById('pdate').textContent=f;
   document.getElementById('pc-pending').classList.remove('printing');
   const tb=document.getElementById('ptb');tb.innerHTML='';
   sts.forEach((e,i)=>{
     const nt=e.t!==undefined?nT(e.t):null,np=e.p!==undefined?nP(e.p,mx):null,tot=nt!==null&&np!==null?nt+np:null;
     const tr=document.createElement('tr');tr.style.background=i%2===0?'#fff':'#f9f6ef';
-    tr.innerHTML=`<td style="padding:5px 9px">${i+1}</td><td style="padding:5px 9px;font-weight:600">${e.nombre}</td><td style="padding:5px 9px;text-align:center">${e.t!==undefined?e.t:'â€”'}</td><td style="padding:5px 9px;text-align:center">${e.p!==undefined?e.p:'â€”'}</td><td style="padding:5px 9px;text-align:center">${nt!==null?nt.toFixed(1):'â€”'}</td><td style="padding:5px 9px;text-align:center">${np!==null?np.toFixed(1):'â€”'}</td><td style="padding:5px 9px;text-align:center;font-weight:700">${tot!==null?tot.toFixed(1):'â€”'}</td>`;
+    tr.innerHTML=`<td style="padding:5px 9px">${i+1}</td><td style="padding:5px 9px;font-weight:600">${e.nombre}</td><td style="padding:5px 9px;text-align:center">${e.t!==undefined?e.t:'—'}</td><td style="padding:5px 9px;text-align:center">${e.p!==undefined?e.p:'—'}</td><td style="padding:5px 9px;text-align:center">${nt!==null?nt.toFixed(1):'—'}</td><td style="padding:5px 9px;text-align:center">${np!==null?np.toFixed(1):'—'}</td><td style="padding:5px 9px;text-align:center;font-weight:700">${tot!==null?tot.toFixed(1):'—'}</td>`;
     tb.appendChild(tr);
   });
   document.getElementById('pc').classList.add('printing');window.print();document.getElementById('pc').classList.remove('printing');
@@ -878,12 +889,12 @@ function PRT(){
 
 function PRT_PEND(){
   const f=new Date().toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'numeric'});
-  document.getElementById('pfec-pend').textContent=getTitulo()+' Â· 1er Trimestre Â· '+f;
+  document.getElementById('pfec-pend').textContent=getTitulo()+' · 1er Trimestre · '+f;
   document.getElementById('pdate-pend').textContent=f;
   const cursosConPend=CURSOS.filter(c=>pendientes(c).length>0);
   const wrap=document.getElementById('ptb-pend');wrap.innerHTML='';
-  if(!cursosConPend.length){wrap.innerHTML='<p style="text-align:center;margin:2rem;color:#666">Â¡Todos calificados!</p>';}
-  else{cursosConPend.forEach(c=>{const pend=pendientes(c);const div=document.createElement('div');div.style.marginBottom='1.5rem';div.innerHTML=`<div style="background:#1a1a2e;color:white;padding:6px 10px;font-weight:700;font-size:11pt;margin-bottom:4px">${c} â€” ${pend.length} pendiente${pend.length!==1?'s':''}</div><table style="width:100%;border-collapse:collapse;font-size:9.5pt"><thead><tr style="background:#f5f0e8"><th style="padding:4px 8px;text-align:left;border-bottom:1px solid #ccc">#</th><th style="padding:4px 8px;text-align:left;border-bottom:1px solid #ccc">Nombre</th></tr></thead><tbody>${pend.map((e,i)=>`<tr style="background:${i%2===0?'#fff':'#f9f6ef'}"><td style="padding:4px 8px">${i+1}</td><td style="padding:4px 8px">${e.nombre}</td></tr>`).join('')}</tbody></table>`;wrap.appendChild(div);});}
+  if(!cursosConPend.length){wrap.innerHTML='<p style="text-align:center;margin:2rem;color:#666">¡Todos calificados!</p>';}
+  else{cursosConPend.forEach(c=>{const pend=pendientes(c);const div=document.createElement('div');div.style.marginBottom='1.5rem';div.innerHTML=`<div style="background:#1a1a2e;color:white;padding:6px 10px;font-weight:700;font-size:11pt;margin-bottom:4px">${c} — ${pend.length} pendiente${pend.length!==1?'s':''}</div><table style="width:100%;border-collapse:collapse;font-size:9.5pt"><thead><tr style="background:#f5f0e8"><th style="padding:4px 8px;text-align:left;border-bottom:1px solid #ccc">#</th><th style="padding:4px 8px;text-align:left;border-bottom:1px solid #ccc">Nombre</th></tr></thead><tbody>${pend.map((e,i)=>`<tr style="background:${i%2===0?'#fff':'#f9f6ef'}"><td style="padding:4px 8px">${i+1}</td><td style="padding:4px 8px">${e.nombre}</td></tr>`).join('')}</tbody></table>`;wrap.appendChild(div);});}
   document.getElementById('pc').classList.remove('printing');document.getElementById('pc-pending').classList.add('printing');window.print();document.getElementById('pc-pending').classList.remove('printing');
 }
 
@@ -892,9 +903,9 @@ function XLS(){
   const sts=[...db.cursos[cur]].sort((a,b)=>a.nombre.localeCompare(b.nombre));
   const mx=maxP();const f=new Date().toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'numeric'});
   let html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Calificaciones</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table border="1"><thead>';
-  html+='<tr><th colspan="8" style="background:#1a1a2e;color:white;font-size:13pt">Reporte â€” '+cur+'</th></tr>';
-  html+='<tr><th colspan="8">'+getTitulo()+' Â· 1er Trimestre Â· '+f+'</th></tr>';
-  html+='<tr style="background:#f0f0f0"><th>#</th><th>Nombre</th><th>P. TeÃ³ricas (/10)</th><th>P. PrÃ¡cticas (/'+mx+')</th><th>Nota TeÃ³rica</th><th>Nota PrÃ¡ctica</th><th>Total /100</th><th>Estado</th></tr></thead><tbody>';
+  html+='<tr><th colspan="8" style="background:#1a1a2e;color:white;font-size:13pt">Reporte — '+cur+'</th></tr>';
+  html+='<tr><th colspan="8">'+getTitulo()+' · 1er Trimestre · '+f+'</th></tr>';
+  html+='<tr style="background:#f0f0f0"><th>#</th><th>Nombre</th><th>P. Teóricas (/10)</th><th>P. Prácticas (/'+mx+')</th><th>Nota Teórica</th><th>Nota Práctica</th><th>Total /100</th><th>Estado</th></tr></thead><tbody>';
   sts.forEach((e,i)=>{
     const nt=e.t!==undefined?nT(e.t):null,np=e.p!==undefined?nP(e.p,mx):null,tot=nt!==null&&np!==null?nt+np:null;
     const estado=tot!==null?(tot>=51?'Aprobado':'Reprobado'):'Pendiente';
@@ -905,7 +916,7 @@ function XLS(){
   const blob=new Blob(['\uFEFF'+html],{type:'application/vnd.ms-excel;charset=utf-8'});
   const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;
   a.download='Calificaciones_'+cur.replace(/ /g,'_')+'.xls';a.click();URL.revokeObjectURL(url);
-  toast('ðŸ“¥ Excel descargado');
+  toast('📥 Excel descargado');
 }
 
 function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2800)}
@@ -916,7 +927,7 @@ Object.assign(window,{doLogin,doLogout,ST,SC,RG,RC,RE,RI,RR,RP,RQ,GN,QS,AE,DE,IM
 // Apply title on page load
 applyTitulo();
 
-// â”€â”€ CROSSFADE BACKGROUND â”€â”€
+// ── CROSSFADE BACKGROUND ──
 (function(){
   const bg = document.getElementById('login-bg');
   if(!bg) return;
