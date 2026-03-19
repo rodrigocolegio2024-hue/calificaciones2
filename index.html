@@ -509,8 +509,11 @@ async function loadUsersFromFirebase(){
 
 async function saveUsers(u){
   users=u;
-  try{await setDoc(doc(fsdb,'calificaciones',USERS_DOC),{users:JSON.parse(JSON.stringify(u))});}
-  catch(e){console.error('saveUsers',e);}
+  await loadFirebase();
+  try{
+    await setDoc(doc(fsdb,'calificaciones',USERS_DOC),{users:JSON.parse(JSON.stringify(u))});
+    console.log('✅ Usuarios guardados en Firebase');
+  }catch(e){console.error('saveUsers error',e);}
 }
 
 async function initUsers(){
@@ -561,8 +564,10 @@ function sdb(){
   if(_saveTimeout)clearTimeout(_saveTimeout);
   _saveTimeout=setTimeout(async()=>{
     try{
+      await loadFirebase();
       const ref=doc(fsdb,'calificaciones',loggedUser);
       await setDoc(ref,{db:JSON.parse(JSON.stringify(db))});
+      console.log('✅ Calificaciones guardadas en Firebase');
     }catch(e){console.error('sdb error',e);}
   },800);
 }
