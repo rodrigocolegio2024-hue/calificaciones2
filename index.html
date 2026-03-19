@@ -346,6 +346,30 @@ textarea.it:focus{border-color:var(--teal)}
       <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">👥 Usuarios registrados</div>
       <div id="users-list"></div>
     </div>
+    <!-- Modal editar usuario -->
+    <div id="edit-user-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(26,26,46,.7);align-items:center;justify-content:center;padding:1.5rem">
+      <div style="background:var(--card);border-radius:16px;padding:1.8rem;width:100%;max-width:380px;box-shadow:0 20px 60px rgba(0,0,0,.3)">
+        <div style="font-family:Fraunces,serif;font-size:1.1rem;font-weight:700;margin-bottom:1.2rem">✏️ Editar usuario: <span id="edit-user-name" style="color:var(--teal)"></span></div>
+        <div id="edit-step1">
+          <div class="inote" style="margin-bottom:1rem">Por seguridad, ingresa tu contraseña actual para continuar.</div>
+          <div class="ig" style="margin-bottom:.9rem"><label>Contraseña actual</label><input type="password" id="edit-cur-pass" placeholder="••••••" onkeydown="if(event.key==='Enter')verifyEditPass()"></div>
+          <div id="edit-pass-err" style="display:none;color:var(--accent);font-size:.8rem;font-weight:600;margin-bottom:.7rem">⚠ Contraseña incorrecta</div>
+          <div style="display:flex;gap:.6rem">
+            <button class="btn bp" onclick="verifyEditPass()">Verificar →</button>
+            <button class="btn" style="background:transparent;border:1.5px solid var(--border)" onclick="closeEditModal()">Cancelar</button>
+          </div>
+        </div>
+        <div id="edit-step2" style="display:none">
+          <div class="ig" style="margin-bottom:.8rem"><label>Nuevo nombre de usuario</label><input type="text" id="edit-new-user" placeholder="dejar vacío para no cambiar"></div>
+          <div class="ig" style="margin-bottom:.8rem"><label>Nueva contraseña</label><input type="password" id="edit-new-pass" placeholder="dejar vacío para no cambiar"></div>
+          <div id="edit-msg" style="font-size:.8rem;font-weight:600;margin-bottom:.8rem"></div>
+          <div style="display:flex;gap:.6rem">
+            <button class="btn bp" onclick="saveEditUser()">💾 Guardar cambios</button>
+            <button class="btn" style="background:transparent;border:1.5px solid var(--border)" onclick="closeEditModal()">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Exportar / Importar datos -->
     <div class="card">
       <div style="font-weight:600;margin-bottom:.9rem;font-size:.95rem">🔄 Exportar / Importar mis datos</div>
@@ -451,19 +475,29 @@ const fsdb = getFirestore(firebaseApp);
 // AUTH & STORAGE
 // ══════════════════════════════════════════════
 
-// Users stored locally (just credentials, not grades)
-const USK='cal_users_v1';
+// ── USERS en Firebase ──
+const USERS_DOC='__users__';
+let users={};
 
-function loadUsers(){
-  try{const r=localStorage.getItem(USK);return r?JSON.parse(r):null}catch{return null}
+async function loadUsersFromFirebase(){
+  try{
+    const snap=await getDoc(doc(fsdb,'calificaciones',USERS_DOC));
+    if(snap.exists())return snap.data().users;
+  }catch(e){console.error('loadUsers',e);}
+  try{const r=localStorage.getItem('cal_users_v1');if(r)return JSON.parse(r);}catch(e){}
+  return null;
 }
-function saveUsers(u){localStorage.setItem(USK,JSON.stringify(u))}
 
-// Init users — create rodrigo if not exists
-let users=loadUsers();
-if(!users){
-  users={rodrigo:{pass:'123456',created:Date.now()}};
-  saveUsers(users);
+async function saveUsers(u){
+  users=u;
+  try{await setDoc(doc(fsdb,'calificaciones',USERS_DOC),{users:u});}
+  catch(e){console.error('saveUsers',e);}
+}
+
+async function initUsers(){
+  const loaded=await loadUsersFromFirebase();
+  if(loaded){users=loaded;}
+  else{users={rodrigo:{pass:'123456',created:Date.now()}};await saveUsers(users);}
 }
 
 let loggedUser=null;
@@ -537,6 +571,8 @@ async function doLogin(){
   const u=document.getElementById('l-user').value.trim().toLowerCase();
   const p=document.getElementById('l-pass').value;
   const err=document.getElementById('l-err');
+  // Asegurarse que los usuarios estén cargados
+  if(!Object.keys(users).length) await initUsers();
   if(!users[u]||users[u].pass!==p){err.classList.add('show');return}
   err.classList.remove('show');
   loggedUser=u;
@@ -558,7 +594,9 @@ function doLogout(){
 }
 
 // ── USER MANAGEMENT ──
-function createUser(){
+let _editingUser=null;
+
+async function createUser(){
   const u=document.getElementById('nu-user').value.trim().toLowerCase();
   const p=document.getElementById('nu-pass').value;
   const msg=document.getElementById('nu-msg');
@@ -566,7 +604,7 @@ function createUser(){
   if(users[u]){msg.style.color='var(--accent)';msg.textContent='⚠ Ya existe ese usuario';return}
   if(!p||p.length<4){msg.style.color='var(--accent)';msg.textContent='⚠ Contraseña mínimo 4 caracteres';return}
   users[u]={pass:p,created:Date.now()};
-  saveUsers(users);
+  await saveUsers(users);
   document.getElementById('nu-user').value='';
   document.getElementById('nu-pass').value='';
   msg.style.color='var(--green)';msg.textContent='✅ Usuario "'+u+'" creado';
@@ -574,13 +612,80 @@ function createUser(){
   setTimeout(()=>msg.textContent='',3000);
 }
 
-function deleteUser(u){
+async function deleteUser(u){
   if(u===loggedUser){toast('No puedes eliminar tu propio usuario');return}
   if(!confirm('¿Eliminar usuario "'+u+'" y todos sus datos?'))return;
   delete users[u];
-  saveUsers(users);
+  await saveUsers(users);
   renderUsers();
   toast('Usuario "'+u+'" eliminado');
+}
+
+function openEditModal(u){
+  _editingUser=u;
+  document.getElementById('edit-user-name').textContent=u;
+  document.getElementById('edit-cur-pass').value='';
+  document.getElementById('edit-new-user').value='';
+  document.getElementById('edit-new-pass').value='';
+  document.getElementById('edit-pass-err').style.display='none';
+  document.getElementById('edit-msg').textContent='';
+  document.getElementById('edit-step1').style.display='block';
+  document.getElementById('edit-step2').style.display='none';
+  document.getElementById('edit-user-modal').style.display='flex';
+}
+
+function closeEditModal(){
+  document.getElementById('edit-user-modal').style.display='none';
+  _editingUser=null;
+}
+
+function verifyEditPass(){
+  const p=document.getElementById('edit-cur-pass').value;
+  const errEl=document.getElementById('edit-pass-err');
+  if(!_editingUser||!users[_editingUser]||users[_editingUser].pass!==p){
+    errEl.style.display='block';return;
+  }
+  errEl.style.display='none';
+  document.getElementById('edit-step1').style.display='none';
+  document.getElementById('edit-step2').style.display='block';
+}
+
+async function saveEditUser(){
+  const newU=document.getElementById('edit-new-user').value.trim().toLowerCase();
+  const newP=document.getElementById('edit-new-pass').value;
+  const msg=document.getElementById('edit-msg');
+  if(!newU&&!newP){msg.style.color='var(--accent)';msg.textContent='⚠ Ingresa al menos un cambio';return}
+  if(newU&&newU!==_editingUser&&users[newU]){msg.style.color='var(--accent)';msg.textContent='⚠ Ese nombre ya existe';return}
+  if(newU&&newU.length<2){msg.style.color='var(--accent)';msg.textContent='⚠ Nombre muy corto';return}
+  if(newP&&newP.length<4){msg.style.color='var(--accent)';msg.textContent='⚠ Contraseña mínimo 4 caracteres';return}
+
+  const userData={...users[_editingUser]};
+  if(newP) userData.pass=newP;
+
+  if(newU&&newU!==_editingUser){
+    // Cambiar nombre: copiar datos de calificaciones al nuevo nombre
+    try{
+      const oldSnap=await getDoc(doc(fsdb,'calificaciones',_editingUser));
+      if(oldSnap.exists()) await setDoc(doc(fsdb,'calificaciones',newU),oldSnap.data());
+    }catch(e){}
+    delete users[_editingUser];
+    users[newU]=userData;
+    // Si es el usuario logueado, actualizar sesión
+    if(_editingUser===loggedUser){
+      loggedUser=newU;
+      document.getElementById('user-chip').textContent='👤 '+newU;
+    }
+  } else {
+    users[_editingUser]=userData;
+    if(_editingUser===loggedUser&&newP){
+      // Contraseña cambiada OK
+    }
+  }
+
+  await saveUsers(users);
+  msg.style.color='var(--green)';msg.textContent='✅ Guardado correctamente';
+  renderUsers();
+  setTimeout(()=>closeEditModal(),1200);
 }
 
 function renderUsers(){
@@ -592,9 +697,12 @@ function renderUsers(){
     row.className='user-row';
     const isMe=u===loggedUser;
     row.innerHTML=`<div class="user-avatar">${u[0].toUpperCase()}</div>
-      <div><div class="user-name">${u}${isMe?' <span style="color:var(--teal);font-size:.72rem">(tú)</span>':''}</div>
+      <div style="flex:1"><div class="user-name">${u}${isMe?' <span style="color:var(--teal);font-size:.72rem">(tú)</span>':''}</div>
       <div class="user-role">${isMe?'Sesión activa':'Usuario registrado'}</div></div>
-      <div class="user-actions">${!isMe?`<button class="btn bdanger" onclick="deleteUser('${u}')">Eliminar</button>`:''}</div>`;
+      <div class="user-actions">
+        <button class="btn bp" style="font-size:.72rem;padding:.22rem .55rem" onclick="openEditModal('${u}')">✏️ Editar</button>
+        ${!isMe?`<button class="btn bdanger" onclick="deleteUser('${u}')">✕</button>`:''}
+      </div>`;
     list.appendChild(row);
   });
 }
@@ -922,7 +1030,7 @@ function XLS(){
 function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2800)}
 
 // Exponer funciones al window (necesario con type="module")
-Object.assign(window,{doLogin,doLogout,ST,SC,RG,RC,RE,RI,RR,RP,RQ,GN,QS,AE,DE,IMP,CN,clamp,updatePLabel,PRT,PRT_PEND,XLS,createUser,deleteUser,renderUsers,exportData,importData,limpiarCalificaciones,limpiarTodo,guardarTitulo,applyTitulo});
+Object.assign(window,{doLogin,doLogout,ST,SC,RG,RC,RE,RI,RR,RP,RQ,GN,QS,AE,DE,IMP,CN,clamp,updatePLabel,PRT,PRT_PEND,XLS,createUser,deleteUser,renderUsers,exportData,importData,limpiarCalificaciones,limpiarTodo,guardarTitulo,applyTitulo,openEditModal,closeEditModal,verifyEditPass,saveEditUser});
 
 // Apply title on page load
 applyTitulo();
