@@ -523,12 +523,14 @@ async function saveUsers(u){
   }
 }
 
+let _usersLoaded=false;
 async function initUsers(){
+  if(_usersLoaded) return; // Ya cargados — no volver a cargar nunca
   await loadFirebase();
   const result=await loadUsersFromFirebase();
   if(result){
-    // Firebase tiene datos — usarlos siempre, son la fuente de verdad
     users=result.data;
+    _usersLoaded=true;
   } else {
     // Firebase vacío — intentar migrar desde localStorage UNA sola vez
     let migrated=false;
@@ -537,18 +539,17 @@ async function initUsers(){
       if(r){
         const parsed=JSON.parse(r);
         users=parsed;
-        await saveUsers(users); // subir a Firebase y ya no usar localStorage más
-        localStorage.removeItem('cal_users_v1'); // limpiar para no repetir migración
+        await saveUsers(users);
+        localStorage.removeItem('cal_users_v1');
         migrated=true;
-        console.log('Usuarios migrados desde localStorage a Firebase');
       }
     }catch(e){}
     if(!migrated){
-      // Sin datos en ningún lado — crear usuario por defecto
       users={rodrigo:{pass:'123456',created:Date.now()}};
       await saveUsers(users);
     }
   }
+  _usersLoaded=true;
 }
 
 let loggedUser=null;
@@ -620,8 +621,6 @@ async function doLogin(){
   const u=document.getElementById('l-user').value.trim().toLowerCase();
   const p=document.getElementById('l-pass').value;
   const err=document.getElementById('l-err');
-  // Asegurarse que los usuarios estén cargados
-  if(!Object.keys(users).length) await initUsers();
   if(!users[u]||users[u].pass!==p){err.classList.add('show');return}
   err.classList.remove('show');
   loggedUser=u;
