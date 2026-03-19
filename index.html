@@ -229,6 +229,7 @@ textarea.it:focus{border-color:var(--teal)}
   </div>
   <div class="header-right">
     <span class="user-chip" id="user-chip">—</span>
+    <button class="btn-logout" id="btn-fs" onclick="toggleFullscreen()" title="Pantalla completa">⛶</button>
     <button class="btn-logout" onclick="doLogout()">Salir</button>
   </div>
 </header>
@@ -1072,7 +1073,29 @@ function XLS(){
 function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2800)}
 
 // Exponer funciones al window (necesario con type="module")
-Object.assign(window,{doLogin,doLogout,ST,SC,RG,RC,RE,RI,RR,RP,RQ,GN,QS,AE,DE,IMP,CN,clamp,updatePLabel,PRT,PRT_PEND,XLS,createUser,deleteUser,renderUsers,exportData,importData,limpiarCalificaciones,limpiarTodo,guardarTitulo,applyTitulo,openEditModal,closeEditModal,verifyEditPass,saveEditUser});
+function toggleFullscreen(){
+  const btn=document.getElementById('btn-fs');
+  if(!document.fullscreenElement&&!document.webkitFullscreenElement){
+    const el=document.documentElement;
+    if(el.requestFullscreen) el.requestFullscreen();
+    else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    if(btn) btn.textContent='✕⛶';
+  } else {
+    if(document.exitFullscreen) document.exitFullscreen();
+    else if(document.webkitExitFullscreen) document.webkitExitFullscreen();
+    if(btn) btn.textContent='⛶';
+  }
+}
+document.addEventListener('fullscreenchange',()=>{
+  const btn=document.getElementById('btn-fs');
+  if(btn) btn.textContent=document.fullscreenElement?'✕⛶':'⛶';
+});
+document.addEventListener('webkitfullscreenchange',()=>{
+  const btn=document.getElementById('btn-fs');
+  if(btn) btn.textContent=document.webkitFullscreenElement?'✕⛶':'⛶';
+});
+
+Object.assign(window,{doLogin,doLogout,ST,SC,RG,RC,RE,RI,RR,RP,RQ,GN,QS,AE,DE,IMP,CN,clamp,updatePLabel,PRT,PRT_PEND,XLS,createUser,deleteUser,renderUsers,exportData,importData,limpiarCalificaciones,limpiarTodo,guardarTitulo,applyTitulo,openEditModal,closeEditModal,verifyEditPass,saveEditUser,toggleFullscreen});
 
 // Arranque: cargar Firebase → usuarios → título
 applyTitulo();
