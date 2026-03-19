@@ -321,7 +321,10 @@ textarea.it:focus{border-color:var(--teal)}
   <div id="tp" class="panel">
     <div class="toolbar">
       <div class="stitle" style="margin:0">⏳ Pendientes</div>
-      <button class="btn bg" onclick="PRT_PEND()">🖨️ PDF</button>
+      <div class="btn-group">
+        <button class="btn bxl" onclick="XLS_PEND()">📥 Excel</button>
+        <button class="btn bg" onclick="PRT_PEND()">🖨️ PDF</button>
+      </div>
     </div>
     <div id="pend-stats" class="sr"></div>
     <div id="no-pending-msg" class="card" style="display:none"><div class="empty"><div class="ei">🎉</div><strong>¡Todo calificado!</strong></div></div>
@@ -1075,6 +1078,33 @@ function XLS(){
   toast('📥 Excel descargado');
 }
 
+function XLS_PEND(){
+  const f=new Date().toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'numeric'});
+  let html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Pendientes</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body>';
+  const cursosConPend=CURSOS.filter(c=>pendientes(c).length>0);
+  if(!cursosConPend.length){toast('✅ ¡No hay pendientes!');return;}
+  cursosConPend.forEach(c=>{
+    const mx=maxPFor(c);
+    const sts=[...db.cursos[c]].sort((a,b)=>a.nombre.localeCompare(b.nombre));
+    html+=`<table border="1" style="margin-bottom:12pt"><thead>`;
+    html+=`<tr><th colspan="8" style="background:#1a1a2e;color:white;font-size:13pt">${c} — Pendientes</th></tr>`;
+    html+=`<tr><th colspan="8">${getTitulo()} · 1er Trimestre · ${f}</th></tr>`;
+    html+=`<tr style="background:#f0f0f0"><th>#</th><th>Nombre</th><th>P. Teóricas (/10)</th><th>P. Prácticas (/${mx})</th><th>Nota Teórica</th><th>Nota Práctica</th><th>Total /100</th><th>Estado</th></tr></thead><tbody>`;
+    sts.forEach((e,i)=>{
+      const nt=e.t!==undefined?nT(e.t):null,np=e.p!==undefined?nP(e.p,mx):null,tot=nt!==null&&np!==null?nt+np:null;
+      const estado=tot!==null?(tot>=51?'Aprobado':'Reprobado'):'Pendiente';
+      const eColor=estado==='Aprobado'?'#155724':estado==='Reprobado'?'#721c24':'#856404';
+      html+=`<tr style="background:${i%2===0?'#fff':'#f5f5f5'}"><td align="center">${i+1}</td><td>${e.nombre}</td><td align="center">${e.t!==undefined?e.t:''}</td><td align="center">${e.p!==undefined?e.p:''}</td><td align="center">${nt!==null?nt.toFixed(1):''}</td><td align="center">${np!==null?np.toFixed(1):''}</td><td align="center" style="font-weight:bold">${tot!==null?tot.toFixed(1):''}</td><td align="center" style="color:${eColor};font-weight:bold">${estado}</td></tr>`;
+    });
+    html+='</tbody></table><br>';
+  });
+  html+='</body></html>';
+  const blob=new Blob(['﻿'+html],{type:'application/vnd.ms-excel;charset=utf-8'});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;
+  a.download='Pendientes_'+getTitulo().replace(/ /g,'_')+'.xls';a.click();URL.revokeObjectURL(url);
+  toast('📥 Excel de pendientes descargado');
+}
+
 function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2800)}
 
 // Exponer funciones al window (necesario con type="module")
@@ -1109,7 +1139,7 @@ document.addEventListener('webkitfullscreenchange',()=>{
   if(btn) btn.textContent=document.webkitFullscreenElement?'✕⛶':'⛶';
 });
 
-Object.assign(window,{doLogin,doLogout,ST,SC,RG,RC,RE,RI,RR,RP,RQ,GN,QS,AE,DE,IMP,CN,clamp,updatePLabel,PRT,PRT_PEND,XLS,createUser,deleteUser,renderUsers,exportData,importData,limpiarCalificaciones,limpiarTodo,guardarTitulo,applyTitulo,openEditModal,closeEditModal,verifyEditPass,saveEditUser,toggleFullscreen});
+Object.assign(window,{doLogin,doLogout,ST,SC,RG,RC,RE,RI,RR,RP,RQ,GN,QS,AE,DE,IMP,CN,clamp,updatePLabel,PRT,PRT_PEND,XLS,createUser,deleteUser,renderUsers,exportData,importData,limpiarCalificaciones,limpiarTodo,guardarTitulo,applyTitulo,openEditModal,closeEditModal,verifyEditPass,saveEditUser,toggleFullscreen,XLS_PEND});
 
 // Arranque: cargar Firebase → usuarios → título
 applyTitulo();
